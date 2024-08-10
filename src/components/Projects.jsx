@@ -1,75 +1,92 @@
-import React from "react";
-import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
-import Logo from "../assets/coding-svgrepo-com.svg";
+import { useState } from "react";
+import { FaGithub, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
 import firstS from "../assets/sc1.png";
 import secondS from "../assets/sc2.png";
 import thirdS from "../assets/sc3.png";
 
 const Projects = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="w-full min-h-screen bg-black  border-white border-1 ">
-        {/* here i am starting my navbar */}
-        <nav className="flex">
-          <h2 className="text-purple-300 h-[3rem] font-mono inline-block text-5xl ml-20 mt-4 border-white border-1">
-            Yash
-          </h2>
-          <ul className=" flex space-x-20 text-xl ml-40 text-purple-300  mt-6 border-white border-1">
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/About">
-              {" "}
-              <li>About</li>
-            </a>
-            <a href="/Projects">
-              <li>Projects</li>
-            </a>
-            <a href="/Contact">
-              <li>Contact</li>
-            </a>
+      <div className="w-full min-h-screen bg-black border-white border-1">
+        {/* Navbar */}
+        <nav className="flex flex-col md:flex-row justify-between items-center p-4">
+          <div className="flex justify-between items-center w-full md:w-auto">
+            <h2 className="text-purple-300 h-[3rem] font-mono text-3xl md:text-5xl">
+              Yash
+            </h2>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-purple-300"
+            >
+              <FaBars className="h-8 w-8" />
+            </button>
+          </div>
+          <ul
+            className={`${
+              isOpen ? 'flex' : 'hidden'
+            } flex-col md:flex md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-10 text-xl text-purple-300 mt-4 md:mt-0`}
+          >
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/About">About</a>
+            </li>
+            <li>
+              <a href="/Projects">Projects</a>
+            </li>
+            <li>
+              <a href="/Contact">Contact</a>
+            </li>
           </ul>
-          <div className="ml-40 flex gap-3 mt-6">
-            <a href="https://github.com/yasx50">
-              <FaGithub className="text-purple-300 h-10 w-20 rounded-md" />
+          <div className="flex space-x-3 mt-4 md:mt-0">
+            <a href="https://github.com/yasx50" target="__blank">
+              <FaGithub className="text-purple-300 h-8 w-8" />
+            </a>
+            <a href="https://www.instagram.com/yash___yadu1c/" target="__blank">
+              <FaInstagram className="text-purple-300 h-8 w-8" />
             </a>
             <a href="">
-              <FaInstagram className="text-purple-300 h-10 w-20" />
-            </a>
-            <a href="">
-              <FaTwitter className="text-purple-300 h-10 w-20" />
+              <FaTwitter className="text-purple-300 h-8 w-8" />
             </a>
           </div>
         </nav>
-        {/* here nav bar is comp[leted] */}
-        {/* here i am heading of product page*/}
 
-        <div className="text-purple-300 text-left text-5xl p-10">
+        {/* Heading */}
+        <div className="text-purple-300 text-left text-3xl md:text-5xl p-6 md:p-10">
           Explore My Recent E-Commerce Project
         </div>
-        <div className="border-1">
-          <div className="flex flex-wrap gap-5  justify-center items-center ">
-            <img src={firstS} alt="firstimage" className=" w-[30%]" />
-            <img src={secondS} alt="firstimage" className=" w-[30%]" />
-            <img src={thirdS} alt="firstimage" className=" w-[30%]" />
+
+        {/* Project Images */}
+        <div className="flex flex-col items-center p-4">
+          <div className="flex flex-wrap gap-5 justify-center">
+            <img src={firstS} alt="firstimage" className="w-full md:w-1/3 lg:w-1/4" />
+            <img src={secondS} alt="secondimage" className="w-full md:w-1/3 lg:w-1/4" />
+            <img src={thirdS} alt="thirdimage" className="w-full md:w-1/3 lg:w-1/4" />
           </div>
-          <div className="text-purple-300 text-xl border-1 text-center mt-5 w-[50rem] ">
-            <ul className="">
-                <li> Dairy eCommerce Website (MERN Stack) <br />
-            Developed a comprehensive eCommerce platform for a dairy business
-            using the MERN stack. The website features a full suite of
-            functionalities typical of leading eCommerce sites, including
-            product listings, shopping cart, secure payment processing, and user
-            authentication. Currently in the final stages of development, with
-            completion and deployment expected next month.</li>
-                <li className="flex gap-10 justify-center items-center mt-5 "><FaGithub className="text-purple-300 h-10 w-20 rounded-md" /><a href="https://github.com/yasx50/dairy-app" className="text-purple-300 "><b>Visit GitHub</b></a></li>
+
+          {/* Project Description */}
+          <div className="text-purple-300 text-base md:text-xl border-1 text-center mt-5 w-full md:w-4/5 lg:w-3/4 px-4">
+            <ul className="list-disc list-inside">
+              <li className="mt-2">
+                Dairy eCommerce Website (MERN Stack) <br />
+                Developed a comprehensive <b>eCommerce</b> platform for a dairy business
+                using the MERN stack. The website features a full suite of
+                functionalities typical of leading eCommerce sites, including
+                <b> product listings</b>, <b>shopping cart</b>,<b> secure payment processing, and user
+                authentication</b>. Currently in the final stages of development, with
+                completion and deployment expected next month.
+              </li>
+              <li className="flex gap-4 justify-center items-center mt-5">
+                <FaGithub className="text-purple-300 h-8 w-8" />
+                <a href="https://github.com/yasx50/dairy-app" className="text-purple-300 text-lg">
+                  <b>Visit GitHub</b>
+                </a>
+              </li>
             </ul>
-           
           </div>
         </div>
-          <div className="flex">
-          
-          </div>
       </div>
     </>
   );

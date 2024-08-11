@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from "react-router-dom";
-import { HashRouter  as Router } from "react-router-dom";
+import { BrowserRouter   } from "react-router-dom";
 
 import Home from './components/Home'
 import About from './components/About'
@@ -11,23 +11,16 @@ function App() {
   
 
   return (
-    <Router basename='/portfolio' >
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Projects" element={<Projects />} />
+        <Route path="/Contact" element={<Contact />} />
 
-    
-    
-    <Routes>
-    <Route path="/portfolio" element={<Home />} />
-    <Route path="/About" element={ <About/>} />
-    <Route path="/Projects" element={ <Projects/>} />
-    <Route path="/Contact" element={ <Contact/>} />
-    
-   
+      </Routes>
+    </BrowserRouter>
 
-    </Routes>
-    
-   
-    
-    </Router>
   )
 }
 

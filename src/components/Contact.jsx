@@ -1,54 +1,14 @@
 import { useState } from "react";
 import { FaGithub, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
+import Navbar from "./Navbar";
 
 const Contact = () => {
-  const [isOpen, setIsOpen] = useState(false);
+ 
   return (
     <>
       <div className="w-full min-h-screen bg-black border-white border-1">
         {/* Navbar */}
-        <nav className="flex flex-col md:flex-row justify-between items-center p-4">
-          <div className="flex justify-between items-center w-full md:w-auto">
-            <h2 className="text-purple-300 h-[3rem] font-mono text-3xl md:text-5xl">
-              Yash
-            </h2>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-purple-300"
-            >
-              <FaBars className="h-8 w-8" />
-            </button>
-          </div>
-          <ul
-            className={`${
-              isOpen ? 'flex' : 'hidden'
-            } flex-col md:flex md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-10 text-xl text-purple-300 mt-4 md:mt-0`}
-          >
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/About">About</a>
-            </li>
-            <li>
-              <a href="/Projects">Projects</a>
-            </li>
-            <li>
-              <a href="/Contact">Contact</a>
-            </li>
-          </ul>
-          <div className="flex space-x-3 mt-4 md:mt-0">
-            <a href="https://github.com/yasx50">
-              <FaGithub className="text-purple-300 h-8 w-8" target="__blank"/>
-            </a>
-            <a href="https://www.instagram.com/yash___yadu1c/" target="__blank">
-              <FaInstagram className="text-purple-300 h-8 w-8" />
-            </a>
-            <a href="">
-              <FaTwitter className="text-purple-300 h-8 w-8" />
-            </a>
-          </div>
-        </nav>
+        <Navbar/>
 
         {/* Contact Heading */}
         <div className="text-purple-300 text-left text-3xl md:text-5xl p-6 md:p-10">

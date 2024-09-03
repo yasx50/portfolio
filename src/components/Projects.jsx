@@ -16,7 +16,7 @@ const Projects = () => {
                   Audio To Video
                 </h2>
                 <div className="image flex flex-wrap justify-center mt-4">
-                  <img src={image} alt="" />
+                  {/* <img src={image} alt="" /> */}
                   
                 </div>
               </div>

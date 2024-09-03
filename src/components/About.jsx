@@ -1,59 +1,53 @@
 import { useState } from "react";
-import { FaGithub, FaTwitter, FaInstagram, FaBars, FaSmile } from "react-icons/fa";
+import {
+  FaGithub,
+  FaTwitter,
+  FaInstagram,
+  FaBars,
+  FaSmile,
+} from "react-icons/fa";
+import { FaAnglesDown } from "react-icons/fa6";
 import Logo from "../assets/coding-svgrepo-com.svg";
 import Photo from "../assets/my_photo_2.jpg";
 import Navbar from "./Navbar";
 
 const About = () => {
-  
   return (
     <>
-      <div className="w-full min-h-screen bg-black border-white border-1">
-        {/* Navbar */}
-        <Navbar/>
+      <section id="about">
+        <div className="w-full min-h-screen bg-black border-white border-1">
+          {/* Navbar */}
+          <Navbar />
 
-        {/* Pick Up Line */}
-        <div>
-  <h2 className="text-purple-300 text-3xl md:text-4xl lg:text-5xl text-center p-6 md:p-8 lg:p-10">
-    The best code isn't just written—it's rewritten, refined, and
-    improved with every iteration.
-  </h2>
-</div>
+          {/* Profile Section */}
+          <div className="text-white flex flex-col items-center p-5 justify-center">
+            {/* Profile Image */}
+            <div className="mb-4">
+              <img
+                src={Photo}
+                alt="the profile pic of yash"
+                className="md:h-[13rem] md:w-[13rem] w-[10rem] h-[10rem] rounded-full border-2"
+              />
+            </div>
 
+            {/* Profile Text */}
+            <div className="text-center text-purple-300 px-4 md:px-0">
+              <h5 className="text-xl md:text-2xl lg:text-3xl">This is    Yash Yadav</h5>
+              <h1 className="text-2xl md:text-4xl lg:text-6xl p-2 md:p-4 lg:p-5">Full-Stack Developer</h1>
+              <p className="text-sm md:text-base lg:text-lg max-w-xl">
+                Crafting responsive and engaging web experiences, I blend creativity with code to build intuitive digital solutions.
+              </p>
+            </div>
+          </div>
 
-        {/* Profile Section */}
-        <div className="text-white flex flex-col md:flex-row p-5">
-          <img
-            src={Photo}
-            alt="the profile pic of yash"
-            className="h-[30rem] w-[27rem] rounded-3xl border-purple-400 border-1"
-          />
-          <div className="text-purple-300 md:ml-10">
-            <ul className="text-left text-2xl p-5 mt-2">
-              <li className="flex gap-4">Hey <FaSmile /></li>
-              <li className="mt-5">
-                this is <b>Yash Yadav</b>
-              </li>
-              <li className="mt-5">
-                Passionate <b>full-stack developer</b> with expertise in both <b>front-end
-                and back-end</b> technologies, creating seamless and dynamic web
-                applications.
-              </li>
-              <li className="mt-5">
-                Skilled in full-stack <b>Python development</b>, leveraging frameworks and tools to build robust and scalable solutions.
-              </li>
-              <li className="mt-5">
-                Currently pursuing a <b>BSc in Computer Science</b>, continuously
-                expanding my knowledge and staying up-to-date with the latest
-                industry trends.
-              </li>
-              <li className="mt-5">
-                Driven by a love for coding and <b>problem-solving</b>, I thrive on turning complex challenges into innovative and efficient solutions.
-              </li>
-            </ul>
+          {/* Down Arrow */}
+          <div className="text-center mt-6">
+            <a href="#home">
+              <FaAnglesDown className="bg-black inline-block text-purple-300 animate-bounce h-10 md:h-10 md:w-20" />
+            </a>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

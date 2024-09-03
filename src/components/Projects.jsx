@@ -9,9 +9,10 @@ const Projects = () => {
 
   return (
     <>
+    <section id="projects">
       <div className="w-full min-h-screen bg-black border-white border-1">
         {/* Navbar */}
-        <Navbar/>
+        {/* <Navbar/> */}
         {/* Heading */}
         <div className="text-purple-300 text-left text-3xl md:text-5xl p-6 md:p-10">
           Explore My Recent E-Commerce Project
@@ -47,6 +48,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 };

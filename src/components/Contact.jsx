@@ -6,9 +6,10 @@ const Contact = () => {
  
   return (
     <>
+    <section id="contact">
       <div className="w-full min-h-screen bg-black border-white border-1">
         {/* Navbar */}
-        <Navbar/>
+        {/* <Navbar/> */}
 
         {/* Contact Heading */}
         <div className="text-purple-300 text-left text-3xl md:text-5xl p-6 md:p-10">
@@ -70,6 +71,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      </section>
     </>
   );
 };

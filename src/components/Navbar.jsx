@@ -6,9 +6,9 @@ const Navbar = () => {
  
 
   return (
-    <nav className=" top-0 left-0 w-full p-4 bg-black flex justify-between items-center z-50">
+    <nav className=" top-0 font-dela left-0 w-full p-4 bg-black flex justify-between items-center z-50">
       <div className="flex items-center space-x-4">
-        <h2 className="text-purple-300 h-[3rem] font-mono text-3xl md:text-5xl">
+        <h2 className="text-purple-300 h-[3rem]  text-3xl md:text-5xl">
           Yash
         </h2>
         

@@ -7,14 +7,16 @@ const Contact = () => {
   return (
     <>
     <section id="contact">
-      <div className="w-full min-h-screen bg-black border-white border-1">
+      <div className="w-full font-dela min-h-screen bg-black border-white border-1">
         {/* Navbar */}
         {/* <Navbar/> */}
 
         {/* Contact Heading */}
-        <div className="text-purple-300 text-left text-3xl md:text-5xl p-6 md:p-10">
+        <div className="text-purple-300 text-left text-3xl md:text-4xl p-6 md:p-10 ">
+          <b>
           Got a Project in Mind? <br />
           Let's Talk
+          </b>
         </div>
 
         {/* Contact Form */}

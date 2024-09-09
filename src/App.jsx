@@ -16,8 +16,8 @@ function App() {
   return (<>
 
     
-    <About />
     <Home />
+    <About />
     <Projects />
     <Contact />
     </>

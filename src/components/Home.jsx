@@ -19,8 +19,9 @@ const Home = () => {
           {/* Navbar */}
           <Navbar />
 
-          {/* Profile Section */}
-          <div className="text-white flex flex-col items-center p-5 justify-center">
+          <div className=" md:m-0 mt-[5rem]">
+            {/* Profile Section */}
+          <div className="text-white flex flex-col items-center p-3 justify-center">
             {/* Profile Image */}
             <div className="mb-4">
               <img
@@ -32,19 +33,27 @@ const Home = () => {
 
             {/* Profile Text */}
             <div className="text-center text-purple-300 px-4 md:px-0">
-              <h5 className="text-xl md:text-2xl  lg:text-3xl">This is    Yash Yadav</h5>
-              <h1 className="text-2xl md:text-4xl lg:text-6xl p-2 md:p-4 lg:p-5">Full-Stack Developer</h1>
-              <p className="text-sm md:text-base lg:text-lg max-w-xl">
+              <h5 className="text-xl md:text-2xl  lg:text-3xl text-center animate-bounce-1 italic">This is    Yash Yadav</h5>
+              <h1 className="text-3xl border-1 w-[100%] md:text-4xl lg:text-6xl m-2 md:p-4 lg:p-5 text-center">Full-Stack Developer</h1>
+              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl m-2 text-center">
                 Crafting responsive and engaging web experiences, I blend creativity with code to build intuitive digital solutions.
               </p>
+              
             </div>
           </div>
+          <p className="mt-6 text-slate-500 italic  text-center block md:hidden">
+  <b>"Code is like humor. When you have to explain it, it’s bad."</b>
+</p>
+
+
+    
 
           {/* Down Arrow */}
-          <div className="text-center mt-6">
+          <div className="text-center mt-6 md:mt-4">
             <a href="#about">
               <FaAnglesDown className="bg-black inline-block text-purple-300 animate-bounce h-10 md:h-10 md:w-20" />
             </a>
+          </div>
           </div>
         </div>
       </section>

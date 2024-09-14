@@ -4,4 +4,7 @@
 html {
     scroll-behavior: smooth;
   }
+  body{
+    cursor: url(''), auto;
+  }
   

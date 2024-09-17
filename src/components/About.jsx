@@ -1,6 +1,7 @@
 import { FaReact, FaNode } from "react-icons/fa";
 import { BiLogoMongodb, BiLogoFlask, BiLogoDjango } from "react-icons/bi";
 import {
+  SiFigma,
   SiExpress,
   SiNumpy,
   SiPandas,
@@ -91,6 +92,7 @@ const About = () => {
                 <div className="logos flex flex-wrap justify-center mt-4">
                   <SiVisualstudiocode className="h-12 w-12 md:h-16 md:w-16 text-blue-600 m-2" />
                   <SiGit className="h-12 w-12 md:h-16 md:w-16 text-purple-300 m-2" />
+                  <SiFigma className="h-12 w-12 md:h-16 md:w-16 text-purple-300 m-2" />
                   <SiGithub className="h-12 w-12 md:h-16 md:w-16 text-zinc-300 m-2" />
                   <SiPostman className="h-12 w-12 md:h-16 md:w-16 text-orange-400 m-2" />
                 </div>

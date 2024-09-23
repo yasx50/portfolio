@@ -32,8 +32,8 @@ const About = () => {
             {/* Flex container for the different sections */}
             <div className="flex flex-wrap items-start justify-center gap-4 mt-2">
               {/* Webdev section */}
-              <div className="webdev border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-500">
-                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-500">
+              <div className="webdev border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-700">
+                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-700">
                   Mern Stack
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">
@@ -45,8 +45,8 @@ const About = () => {
               </div>
 
               {/* Python section */}
-              <div className="python border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-500">
-                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-500">
+              <div className="python border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-700">
+                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-700">
                   Python
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">
@@ -58,8 +58,8 @@ const About = () => {
               </div>
 
               {/* Database section */}
-              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-500">
-                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-500">
+              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-700">
+                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-700">
                   Database
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">
@@ -71,8 +71,8 @@ const About = () => {
               </div>
 
               {/* Additional skills section */}
-              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-500">
-                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-500">
+              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-700">
+                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-700">
                   Additional Skills
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">
@@ -85,8 +85,8 @@ const About = () => {
               </div>
 
               {/* Tools section */}
-              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-500">
-                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-500">
+              <div className="java border-2 p-5 rounded-2xl max-w-xs md:max-w-sm border-zinc-700">
+                <h2 className="text-rose-400 text-center text-2xl mt-2 p-2 bg-zinc-800 border-2 rounded-md border-zinc-700">
                   Tools
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">

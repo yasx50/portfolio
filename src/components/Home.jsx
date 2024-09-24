@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { FaAnglesDown } from "react-icons/fa6";
 import Logo from "../assets/coding-svgrepo-com.svg";
-import Photo from "../assets/my_photo_2.jpg";
+import Photo from "../assets/yashpro.jpg";
 import Navbar from "./Navbar";
 
 const Home = () => {
@@ -32,10 +32,10 @@ const Home = () => {
             </div>
 
             {/* Profile Text */}
-            <div className="text-center text-purple-300 px-4 md:px-0">
+            <div className="text-center justify-center  text-purple-300 px-4 md:px-0">
               <h5 className="text-xl md:text-2xl  lg:text-3xl text-center animate-bounce-1 italic">This is    Yash Yadav</h5>
               <h1 className="text-3xl border-1 w-[100%] md:text-4xl lg:text-6xl m-2 md:p-4 lg:p-5 text-center">Full-Stack Developer</h1>
-              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl m-2 text-center">
+              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl ml-[2rem] ">
                 Crafting responsive and engaging web experiences, I blend creativity with code to build intuitive digital solutions.
               </p>
               

@@ -15,7 +15,7 @@ const Projects = () => {
           </h1>
 
           <div className="all border-1 flex flex-wrap items-start justify-center gap-4  p-5">
-            <div className="VideoToAudio border-2 flex flex-row border-zinc-900 rounded-2xl max-w-xs md:max-w-sm">
+          <div className="VideoToAudio border-2 flex flex-row border-zinc-900 rounded-2xl max-w-xs md:max-w-sm">
               <div className="image   justify-center p-2">
                 <img
                   src={image}
@@ -45,7 +45,7 @@ const Projects = () => {
                 </p>
                
               </div>
-            </div>
+            </div>       
           </div>
         </div>
       </section>

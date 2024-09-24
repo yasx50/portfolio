@@ -11,11 +11,12 @@ import Logo from "../assets/coding-svgrepo-com.svg";
 import Photo from "../assets/yashpro.jpg";
 import Navbar from "./Navbar";
 
+
 const Home = () => {
   return (
     <>
-      <section id="home">
-        <div className="w-full font-dela min-h-screen bg-black border-white border-1">
+      <section id="home" >
+        <div className="w-full font-dela min-h-screen bg-black border-white border-1" s >
           {/* Navbar */}
           <Navbar />
 

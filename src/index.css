@@ -5,6 +5,6 @@ html {
     scroll-behavior: smooth;
   }
   body{
-    cursor: url(''), auto;
+    /* cursor: url('./assets/file.png'), auto; */
   }
   

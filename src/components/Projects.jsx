@@ -15,68 +15,77 @@ const Projects = () => {
             <b>Projects</b>
           </h1>
 
-          <div className="all border-1 flex flex-wrap items-start justify-center gap-4  p-5">
-          <div className="VideoToAudio border-2 flex flex-row border-zinc-900     rounded-2xl max-w-xs md:max-w-sm">
-              <div className="image   justify-center p-2">
+          <div className="all border-1 md:flex md:flex-wrap md:flex-row flex flex-col  items-start justify-center gap-4  p-5">
+          <div className="VideoToAudio border-2  border-zinc-900   md:h-[21rem]  mt-1 rounded-2xl max-w-xs md:max-w-sm">
+              <div className="image   ">
                 <img
                   src={VtoA}
                   alt="logo of project"
-                  className="h-40 w-[25rem] rounded-2xl"
+                  className="h-40 w-full rounded-2xl"
                 />
               </div>
               <div>
                 <h2 className=" text-left text-2xl mt-2 p-3  border- rounded-md  gap-4">
                   <b>Video To Audio</b>
                 </h2>
-                <p className="text-center text-">
-                  This repository contains a simple yet efficient tool for
-                  converting video files to audio files.
+                <p className="text-center ">
+                Whether you need to extract audio from a video for podcasting, transcription, or any other purpose, this tool provides an easy-to-use solution.
+                </p>
 
-                  <div className="border-zinc-900 border-2 rounded-md   m-1 mr-[2rem]">
+                <div className=" flex justify-center items-center text-center">
+                <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">
                     <a
                       href="https://github.com/yasx50/converting-video-to-audio"
                       className=""
                     >
-                      <div className="flex flex-row gap-5 text-center justify-center items-center  ">
+                      <div className="flex flex-row gap-5  justify-center items-center  ">
                       <FaGithub className="" />
                       <b>Get Source Code</b>
                       </div>
                     </a>
                   </div>
-                </p>
+                </div>
                
               </div>
             </div>
 
-            <div className="Scraping border-2 flex flex-row border-zinc-900     rounded-2xl max-w-xs md:max-w-sm">
-              <div className="image   justify-center p-2">
+                    {/* new */}
+
+                    <div className="Scraping border-2  border-zinc-900  h-[21rem]   rounded-2xl max-w-xs md:max-w-sm">
+              <div className="image   ">
                 <img
                   src={Scrapping}
                   alt="logo of project"
-                  className="h-40 w-[25rem] rounded-2xl"
+                  className="h-40 w-full rounded-2xl"
                 />
               </div>
               <div>
                 <h2 className=" text-left text-2xl mt-2 p-3  border- rounded-md  gap-4">
                   <b>Scrapping The Data</b>
                 </h2>
-                <p className="text-center text-">
+                <p className="text-center ">
                 This project demonstrates how to perform web scraping using Flask and BeautifulSoup to extract data from websites efficiently. 
-                  <div className="border-zinc-900 border-2 rounded-md   m-1 mr-[2rem]">
+                    </p>
+                    <div className=" flex justify-center items-center text-center">
+                <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">
                     <a
-                      href="https://github.com/yasx50/converting-video-to-audio"
+                      href="https://github.com/yasx50/vpnDigitalsServices"
                       className=""
                     >
-                      <div className="flex flex-row gap-5 text-center justify-center items-center  ">
+                      <div className="flex flex-row gap-5  justify-center items-center  ">
                       <FaGithub className="" />
                       <b>Get Source Code</b>
                       </div>
                     </a>
                   </div>
-                </p>
+                </div>
+               
+              
                
               </div>
-            </div>          
+            </div>  
+
+                    {/* end */}
           </div>
         </div>
         

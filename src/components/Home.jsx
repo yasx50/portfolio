@@ -16,13 +16,15 @@ const Home = () => {
   return (
     <>
       <section id="home" >
-        <div className="w-full font-dela min-h-screen bg-black border-white border-1" s >
-          {/* Navbar */}
+      <div
+  className="w-full font-dela min-h-screen bg-black border-white border-1 "
+ 
+>          {/* Navbar */}
           <Navbar />
 
-          <div className=" md:m-0 mt-[5rem]">
+          <div className=" md:m-0 mt-[4rem] ">
             {/* Profile Section */}
-          <div className="text-white flex flex-col items-center p-3 justify-center">
+          <div className="text-white flex flex-col items-center p-3 justify-center animate-bottom-to-top ">
             {/* Profile Image */}
             <div className="mb-4">
               <img
@@ -36,15 +38,15 @@ const Home = () => {
             <div className="text-center justify-center  text-purple-300 px-4 md:px-0">
               <h5 className="text-xl md:text-2xl  lg:text-3xl text-center animate-bounce-1 italic">This is    Yash Yadav</h5>
               <h1 className="text-3xl border-1 w-[100%] md:text-4xl lg:text-6xl m-2 md:p-4 lg:p-5 text-center">Full-Stack Developer</h1>
-              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl ml-[2rem] ">
+              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl text-center p-2 justify-center items-center">
                 Crafting responsive and engaging web experiences, I blend creativity with code to build intuitive digital solutions.
               </p>
               
-            </div>
-          </div>
-          <p className="mt-6 text-slate-500 italic  text-center block md:hidden">
+          <p className="mt-6 text-slate-500 italic sm:animate-bottom-to-top text-center block md:hidden">
   <b>"Code is like humor. When you have to explain it, it’s bad."</b>
 </p>
+            </div>
+          </div>
 
 
     

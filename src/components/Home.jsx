@@ -38,7 +38,7 @@ const Home = () => {
             <div className="text-center justify-center  text-purple-300 px-4 md:px-0">
               <h5 className="text-xl md:text-2xl  lg:text-3xl text-center animate-bounce-1 italic">This is    Yash Yadav</h5>
               <h1 className="text-3xl border-1 w-[100%] md:text-4xl lg:text-6xl m-2 md:p-4 lg:p-5 text-center">Full-Stack Developer</h1>
-              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl text-center p-2 justify-center items-center">
+              <p className="text-slate-500 md:text-base lg:text-lg max-w-xl text-center p-2 md:ml-6 justify-center items-center">
                 Crafting responsive and engaging web experiences, I blend creativity with code to build intuitive digital solutions.
               </p>
               

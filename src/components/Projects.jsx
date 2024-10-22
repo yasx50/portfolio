@@ -104,7 +104,7 @@ const Projects = () => {
                   <b>Balloon Pop Frenzy</b>
                 </h2>
                 <p className="text-center ">
-                Showcasing Phaser.js expertise, this game challenges players to fill balloons with air and pop them in a fun, fast-paced experience
+                Showcasing Phaser.js expertise, this game challenges players to fill balloons with air and pop them in a fun.
                     </p>
                     <div className=" flex justify-center items-center text-center">
                 <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">

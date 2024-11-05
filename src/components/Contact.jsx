@@ -5,9 +5,18 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
+  const [notification, setNotification] = useState(""); // State for notification
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const message = form.current.message.value.trim(); // Get trimmed message value
+
+    // Check if message is empty
+    if (!message) {
+      setNotification(<h1 className="text-red-600">Please enter a message before sending.</h1>);
+      return; // Stop the submission
+    }
 
     emailjs
       .sendForm('service_nmpi3tp', 'template_ita3xki', form.current, {
@@ -15,17 +24,24 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setNotification("Your response has been submitted!"); // Set success notification message
+          form.current.reset(); // Reset the form after submission
         },
         (error) => {
+          setNotification("Failed to send your response. Please try again."); // Set error notification message
           console.log('FAILED...', error.text);
         },
       );
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-6">
-      <form
+    <div className="font-dela">
+      <h1 className="text-4xl p-10 border-1 block text-purple-300 absolute   ">
+            <b>Drop Me a Line</b>
+          </h1>
+
+          <div className="min-h-screen bg-black flex items-center justify-center p-6">
+          <form
         ref={form}
         onSubmit={sendEmail}
         className="bg-zinc-900 p-8 rounded-lg shadow-lg w-full max-w-md text-purple-300"
@@ -62,7 +78,17 @@ const Contact = () => {
         >
           Send
         </button>
+
+        {/* Notification Popup */}
+        {notification && (
+          <div className="mt-4 w-full bg-green-500 text-white text-center py-2 rounded-lg">
+            {notification}
+          </div>
+        )}
       </form>
+         
+          </div>
+
     </div>
   );
 };

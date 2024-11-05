@@ -46,17 +46,17 @@ const Home = () => {
   <b>"Code is like humor. When you have to explain it, it’s bad."</b>
 </p>
             </div>
+          <div className="text-center mt-6 md:mt-4">
+            <a href="#about">
+              <FaAnglesDown className="bg-black inline-block text-purple-300 animate-bounce h-10 md:h-10 md:w-20" />
+            </a>
+          </div>
           </div>
 
 
     
 
           {/* Down Arrow */}
-          <div className="text-center mt-6 md:mt-4">
-            <a href="#about">
-              <FaAnglesDown className="bg-black inline-block text-purple-300 animate-bounce h-10 md:h-10 md:w-20" />
-            </a>
-          </div>
           </div>
         </div>
       </section>

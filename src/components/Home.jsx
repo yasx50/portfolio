@@ -10,6 +10,7 @@ import { FaAnglesDown } from "react-icons/fa6";
 import Logo from "../assets/coding-svgrepo-com.svg";
 import Photo from "../assets/yashpro.jpg";
 import Navbar from "./Navbar";
+import '../index.css'
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
     <>
       <section id="home" >
       <div
-  className="w-full font-dela min-h-screen bg-black border-white border-1 "
+  className="w-full font-[anzo2] min-h-screen bg-black border-white border-1 "
  
 >          {/* Navbar */}
           <Navbar />

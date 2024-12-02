@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { FaGithub, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
 import Navbar from "./Navbar";
+import Footer from './Footer';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -90,6 +91,7 @@ const Contact = () => {
           )}
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

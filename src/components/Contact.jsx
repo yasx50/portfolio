@@ -3,6 +3,7 @@ import { FaGithub, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from './Footer';
 import emailjs from '@emailjs/browser';
+import { Email } from "email";
 
 const Contact = () => {
   const form = useRef();
@@ -14,8 +15,8 @@ const Contact = () => {
     const message = form.current.message.value.trim(); // Get trimmed message value
 
     // Check if message is empty
-    if (!message) {
-      setNotification(<h1 className="text-red-600">Please enter a message before sending.</h1>);
+    if (!message && !user_email) {
+      setNotification(<h1 className="bg-red-600 text-black">Enter Details of All Fields before sending.</h1>);
       return; // Stop the submission
     }
 

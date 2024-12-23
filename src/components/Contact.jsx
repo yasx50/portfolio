@@ -66,7 +66,7 @@ const Contact = () => {
             name="user_email"
             id="user_email"
             className="w-full p-2 mb-4 rounded-lg bg-zinc-800 text-white outline-none focus:ring-2 focus:ring-purple-300"
-          />
+          required/>
 
           <label className="block mb-2 text-white" htmlFor="message">Message</label>
           <textarea
@@ -91,7 +91,7 @@ const Contact = () => {
           )}
         </form>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

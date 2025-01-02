@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaBars } from "react-icons/fa";
 import Logo from '../assets/coding-svgrepo-com.svg';
+import leetcode from '../assets/leetcode.png';
 
 const Navbar = () => {
  
@@ -22,6 +23,10 @@ const Navbar = () => {
         </a>
         <a href="https://www.instagram.com/yash___yadu1c/" target="__blank" rel="noopener noreferrer">
           <FaInstagram className="text-purple-300 h-5 w-6 md:h-8 md:w-8" />
+        </a>
+        <a href="https://www.instagram.com/yash___yadu1c/" target="__blank" rel="noopener noreferrer">
+          {/* <leetcode className="text-purple-300 h-5 w-6 md:h-8 md:w-8" /> */}
+          <img src={leetcode} alt="" className="w-10 h-10 bg-zinc-900" />
         </a>
       </div>
     </nav>

@@ -91,7 +91,7 @@ const Contact = () => {
           )}
         </form>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

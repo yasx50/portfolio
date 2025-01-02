@@ -1,134 +1,108 @@
-import { useState } from "react";
-import { FaGithub, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
-import { SiPython } from "react-icons/si";
-
-import Navbar from "./Navbar";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaAnglesRight } from "react-icons/fa6";
 import VtoA from "../assets/vta2.jpg";
-import Scrapping from '../assets/Scraping.png'
-import gaming from '../assets/gameDev.png'
+import Scrapping from "../assets/Scraping.png";
+import gaming from "../assets/gameDev.png";
 
 const Projects = () => {
   return (
     <>
       <section id="projects">
-        <div className="w-full font-dela min-h-screen bg-black text-purple-300  border-white border-1">
-          <h1 className="text-4xl p-10 border-1 block  ">
+        <div className="w-full font-dela min-h-screen bg-black text-purple-300 border-white border-1">
+          <h1 className="text-4xl p-10 border-b-2 mb-6 text-center">
             <b>Projects</b>
           </h1>
 
-          <div className="all border-1 md:flex md:flex-wrap md:flex-row flex flex-col  items-start justify-center gap-4  p-5">
-          <div className="VideoToAudio border-2  border-zinc-900   md:h-[21rem]  mt-1 rounded-2xl max-w-xs md:max-w-sm">
-              <div className="image   ">
+          <div className="all flex flex-col items-center justify-center gap-10 p-5">
+            {/* Video To Audio Project */}
+            <div className="flex flex-col md:flex-row items-center md:items-start border-2 border-zinc-900 rounded-2xl w-full max-w-4xl p-4">
+              <div className="image md:w-1/2 w-full mb-4 md:mb-0">
                 <img
                   src={VtoA}
-                  alt="logo of project"
-                  className="h-40 w-full rounded-2xl"
+                  alt="Video To Audio project"
+                  className="h-40 w-full rounded-2xl object-cover"
                 />
               </div>
-              <div>
-                <h2 className=" text-left text-2xl mt-2 p-3  border- rounded-md  gap-4">
-                  <b>Video To Audio</b>
-                </h2>
-                <p className="text-center ">
-                Whether you need to extract audio from a video for podcasting, transcription, or any other purpose, this tool provides an easy-to-use solution.
+              <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
+                <h2 className="text-2xl font-bold mb-2">Video To Audio</h2>
+                <p className="text-left mb-4">
+                  Extract audio from videos for podcasts, transcription, or any
+                  other use case with ease using this tool.
                 </p>
-
-                <div className=" flex justify-center items-center text-center">
-                <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">
-                    <a
-                      href="https://github.com/yasx50/converting-video-to-audio"
-                      className=""
-                    >
-                      <div className="flex flex-row gap-5  justify-center items-center  ">
-                      <FaGithub className="" />
-                      <b>Get Source Code</b>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-               
+                <a
+                  href="https://github.com/yasx50/converting-video-to-audio"
+                  className="flex justify-center md:justify-start items-center gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
+                >
+                  <FaGithub />
+                  <b>Get Source Code</b>
+                </a>
               </div>
             </div>
 
-                    {/* new */}
-
-                    <div className="Scraping border-2  border-zinc-900  h-[21rem]   rounded-2xl max-w-xs md:max-w-sm">
-              <div className="image   ">
+            {/* Scraping Project */}
+            <div className="flex flex-col md:flex-row items-center md:items-start border-2 border-zinc-900 rounded-2xl w-full max-w-4xl p-4">
+              <div className="image md:w-1/2 w-full mb-4 md:mb-0">
                 <img
                   src={Scrapping}
-                  alt="logo of project"
-                  className="h-40 w-full rounded-2xl"
+                  alt="Scraping project"
+                  className="h-40 w-full rounded-2xl object-cover"
                 />
               </div>
-              <div>
-                <h2 className=" text-left text-2xl mt-2 p-3  border- rounded-md  gap-4">
-                  <b>Scrapping The Data</b>
-                </h2>
-                <p className="text-center ">
-                This project demonstrates how to perform web scraping using Flask and BeautifulSoup to extract data from websites efficiently. 
-                    </p>
-                    <div className=" flex justify-center items-center text-center">
-                <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">
-                    <a
-                      href="https://github.com/yasx50/vpnDigitalsServices"
-                      className=""
-                    >
-                      <div className="flex flex-row gap-5  justify-center items-center  ">
-                      <FaGithub className="" />
-                      <b>Get Source Code</b>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-               
-              
-               
+              <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
+                <h2 className="text-2xl font-bold mb-2">Scraping The Data</h2>
+                <p className="text-left mb-4">
+                  Learn how to extract data from websites using Flask and
+                  BeautifulSoup with this web scraping tool.
+                </p>
+                <a
+                  href="https://github.com/yasx50/vpnDigitalsServices"
+                  className="flex justify-center md:justify-start items-center gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
+                >
+                  <FaGithub />
+                  <b>Get Source Code</b>
+                </a>
               </div>
-            </div>  
+            </div>
 
-                    {/* end */}
-
-
-                       {/* new */}
-
-                       <div className="Scraping border-2  border-zinc-900  h-[21rem]   rounded-2xl max-w-xs md:max-w-sm">
-              <div className="image   ">
+            {/* Balloon Pop Frenzy Game */}
+            <div className="flex flex-col md:flex-row items-center md:items-start border-2 border-zinc-900 rounded-2xl w-full max-w-4xl p-4">
+              <div className="image md:w-1/2 w-full mb-4 md:mb-0">
                 <img
                   src={gaming}
-                  alt="logo of project"
-                  className="h-40 w-full rounded-2xl"
+                  alt="Balloon Pop Frenzy Game"
+                  className="h-40 w-full rounded-2xl object-cover"
                 />
               </div>
-              <div>
-                <h2 className=" text-left text-2xl mt-2 p-3  border- rounded-md  gap-4">
-                  <b>Balloon Pop Frenzy</b>
-                </h2>
-                <p className="text-center ">
-                Showcasing Phaser.js expertise, this game challenges players to fill balloons with air and pop them in a fun.
-                    </p>
-                    <div className=" flex justify-center items-center text-center">
-                <div className="border-zinc-900 border-2 rounded-md w-full   m-1 ">
-                    <a
-                      href="https://idz-digital-private-limited-f459.onrender.com/"
-                      className=""
-                    >
-                      <div className="flex flex-row gap-5  justify-center items-center  ">
-                      <FaGlobe  className="" />
-                      <b>Get in the Game</b>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-               
-              
-               
+              <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
+                <h2 className="text-2xl font-bold mb-2">Balloon Pop Frenzy</h2>
+                <p className="text-left mb-4">
+                  A fun game built with Phaser.js where players fill and pop
+                  balloons. Try it out!
+                </p>
+                <a
+                  href="https://idz-digital-private-limited-f459.onrender.com/"
+                  className="flex justify-center md:justify-start items-center gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
+                >
+                  <FaGlobe />
+                  <b>Play The Game</b>
+                </a>
               </div>
-            </div>  
+            </div>
+          </div>
 
-                    {/* end */}
+          {/* All Projects Button */}
+          <div className="flex justify-end items-center p-10">
+            <a
+              href="https://github.com/yasx50"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-black border-2 border-zinc-900 text-purple-300 px-6 py-2 rounded-full hover:bg-zinc-900 transition-all"
+            >
+              <b>View All Projects</b>
+              <FaAnglesRight />
+            </a>
           </div>
         </div>
-        
       </section>
     </>
   );

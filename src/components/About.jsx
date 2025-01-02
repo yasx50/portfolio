@@ -1,4 +1,4 @@
-import { FaReact, FaNode,FaJava } from "react-icons/fa";
+import { FaReact, FaNode,FaJava,FaKey } from "react-icons/fa";
 // import { useInView } from "react-intersection-observer";
 import { BiLogoMongodb, BiLogoFlask, BiLogoDjango, } from "react-icons/bi";
 import {
@@ -100,6 +100,7 @@ const About = () => {
                   <SiFigma className="h-12 w-12 md:h-16 md:w-16 text-purple-300 m-2" />
                   <SiGithub className="h-12 w-12 md:h-16 md:w-16 text-zinc-300 m-2" />
                   <SiPostman className="h-12 w-12 md:h-16 md:w-16 text-orange-400 m-2" />
+                  
                 </div>
               </div>
             </div>

@@ -8,8 +8,8 @@ const Projects = () => {
   return (
     <>
       <section id="projects">
-        <div className="w-full font-dela min-h-screen bg-black text-purple-300 border-white border-1">
-          <h1 className="text-4xl p-10 border-b-2 mb-6 text-center">
+        <div className="w-full font-dela min-h-screen bg-black text-purple-300 border-white">
+          <h1 className="text-4xl p-10 -b-2 mb-6 text-left">
             <b>Projects</b>
           </h1>
 

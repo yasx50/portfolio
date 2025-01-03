@@ -8,18 +8,24 @@ import Home from './components/Home'
 import About from './components/About'
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import AllProjects from './components/AllProjects';
+import MainPage from './components/MainPage';
 
 
 function App() {
   
 
-  return (<>
-
-    
-    <Home />
-    <About />
-    <Projects />
-    <Contact />
+  return (
+  <>
+ <BrowserRouter>
+      
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        
+        <Route path="/projects" element={<AllProjects />} />
+        
+      </Routes>
+    </BrowserRouter>
     </>
 
 

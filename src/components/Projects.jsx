@@ -9,7 +9,7 @@ const Projects = () => {
     <>
       <section id="projects">
         <div className="w-full font-dela min-h-screen bg-black text-purple-300 border-white border-1">
-          <h1 className="text-4xl p-10 border-b-2 mb-6 text-center">
+          <h1 className="text-4xl p-10 -b-2 mb-6 text-left">
             <b>Projects</b>
           </h1>
 
@@ -93,7 +93,7 @@ const Projects = () => {
           {/* All Projects Button */}
           <div className="flex justify-end items-center p-10">
             <a
-              href="https://github.com/yasx50"
+              href="/projects"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-black border-2 border-zinc-900 text-purple-300 px-6 py-2 rounded-full hover:bg-zinc-900 transition-all"

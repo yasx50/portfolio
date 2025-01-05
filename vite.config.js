@@ -1,14 +1,16 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import nodePolyfills from 'vite-plugin-node-polyfills';
+import { NodeGlobalsPolyfillPlugin } from 'vite-plugin-node-polyfills'; // Named import
 
 export default defineConfig({
-  plugins: [react(),nodePolyfills({
-    protocolImports: true,
-  })],
+  plugins: [
+    react(),
+    NodeGlobalsPolyfillPlugin({
+      protocolImports: true,
+    }),
+  ],
   server: {
-    host: '0.0.0.0',  // Bind to all network interfaces
+    host: '0.0.0.0', // Bind to all network interfaces
     port: process.env.PORT || 3000, // Use the PORT environment variable or default to 3000
   },
   preview: {

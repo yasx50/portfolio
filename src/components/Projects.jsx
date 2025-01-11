@@ -94,7 +94,7 @@ const Projects = () => {
           <div className="flex justify-end items-center p-10">
             <a
               href="/projects"
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-black border-2 border-zinc-900 text-purple-300 px-6 py-2 rounded-full hover:bg-zinc-900 transition-all"
             >

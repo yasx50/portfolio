@@ -3,6 +3,7 @@ import { FaAnglesRight } from "react-icons/fa6";
 import VtoA from "../assets/vta2.jpg";
 import Scrapping from "../assets/Scraping.png";
 import gaming from "../assets/gameDev.png";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
@@ -92,15 +93,13 @@ const Projects = () => {
 
           {/* All Projects Button */}
           <div className="flex justify-end items-center p-10">
-            <a
-              href="/projects"
-              target="_self"
-              rel="noopener noreferrer"
+            <Link
+              to="/projects"
               className="flex items-center gap-2 bg-black border-2 border-zinc-900 text-purple-300 px-6 py-2 rounded-full hover:bg-zinc-900 transition-all"
             >
               <b>View All Projects</b>
               <FaAnglesRight />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

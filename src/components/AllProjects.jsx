@@ -169,7 +169,7 @@ const Projects = () => {
                   A Python automation tool that captures the 5 most trending topics on Twitter using Selenium.
                 </p>
                 <a
-                  href="https://stir-production.up.railway.app/"
+                  href="https://stir-o1w7.onrender.com"
                   className="flex justify-center md:justify-start items-center gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
                 >
                   <FaGlobe />

@@ -3,10 +3,10 @@ import { FaAnglesRight, FaAnglesLeft } from "react-icons/fa6";
 import VtoA from "../assets/vta2.jpg";
 import Scrapping from "../assets/Scraping.png";
 import gaming from "../assets/gameDev.png";
-import websummarizer from "../assets/web summarizer.jpg";
-import location from "../assets/location.jpg";
-import hospital_management from "../assets/food_management.jpg";
-import treanding from "../assets/treanding.jpg";
+import websummarizer from "../assets/web summarizer.png";
+import location from "../assets/location.png";
+import hospital_management from "../assets/food_management.png";
+import treanding from "../assets/treanding.png";
 import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 
 const Projects = () => {
@@ -40,12 +40,12 @@ const Projects = () => {
                 <img
                   src={websummarizer}
                   alt="ChatScrape"
-                  className="h-40 w-full rounded-2xl object-cover group-hover:opacity-0 transition-opacity duration-300"
+                  className="h-40 w-full rounded-2xl object-fill group-hover:opacity-0 transition-opacity duration-300"
                 />
                 
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
-                <h2 className="text-2xl font-bold mb-2">ChatScrape</h2>
+                <h2 className="text-2xl font-bold mb-2">ScrapeGPT</h2>
                 <p className="text-left mb-4">
                   An AI-powered tool that instantly summarizes websites for
                   quick and easy insights.
@@ -55,7 +55,7 @@ const Projects = () => {
                   className="flex justify-center md:justify-start items-center  gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
                 >
                   <FaGlobe />
-                  <b>Use ChatScrape</b>
+                  <b>Use ScrapeGPT</b>
                 </a>
               </div>
             </div>
@@ -65,7 +65,7 @@ const Projects = () => {
                 <img
                   src={hospital_management}
                   alt="ChatScrape"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
@@ -90,7 +90,7 @@ const Projects = () => {
                 <img
                   src={gaming}
                   alt="Balloon Pop Frenzy Game"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
@@ -115,7 +115,7 @@ const Projects = () => {
                 <img
                   src={VtoA}
                   alt="Video To Audio project"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
@@ -140,7 +140,7 @@ const Projects = () => {
                 <img
                   src={Scrapping}
                   alt="Scraping project"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
@@ -165,14 +165,14 @@ const Projects = () => {
                 <img
                   src={location}
                   alt="GeoQuest"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">
                 <h2 className="text-2xl font-bold mb-2">GeoQuest</h2>
                 <p className="text-left mb-4">
                   A smart mapping tool for effortless exploration and location
-                  discovery.
+                  disfilly.
                 </p>
                 <a
                   href="https://optacloud-1.onrender.com/"
@@ -190,7 +190,7 @@ const Projects = () => {
                 <img
                   src={treanding}
                   alt="TrendPulse"
-                  className="h-40 w-full rounded-2xl object-cover"
+                  className="h-40 w-full rounded-2xl object-fill"
                 />
               </div>
               <div className="md:w-1/2 w-full md:px-8 text-center md:text-left">

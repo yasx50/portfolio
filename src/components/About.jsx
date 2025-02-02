@@ -87,7 +87,7 @@ const About = () => {
                 Currently Exploring
                 </h2>
                 <div className="logos flex flex-wrap justify-center mt-4">
-                  <img src="https://skillicons.dev/icons?i=nextjs,svelte,aws,docker,kubernetes
+                  <img src="https://skillicons.dev/icons?i=nextjs,svelte,docker
 " alt="tools" />
                 </div>
               </div>

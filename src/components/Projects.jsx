@@ -59,7 +59,7 @@ const Projects = () => {
                   Streamline hospital meal planning and staff management with a smart food management system.
                 </p>
                 <a
-                  href="https://scrapegpt-bice.vercel.app/"
+                  href="https://hospital-food-management-system-1.onrender.com/"
                   className="flex justify-center md:justify-start items-center gap-3 border-2 border-zinc-900 rounded-md px-4 py-2 hover:bg-zinc-900 transition-all"
                 >
                   <FaGlobe />

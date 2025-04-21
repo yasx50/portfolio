@@ -1,4 +1,5 @@
 import Galaxy from "../Spline/Galaxy"
+import Contact from "./Contact"
 import Hero from "./Hero"
 import Project from "./projects/Project"
 import Skills from "./skill/Skills"
@@ -10,6 +11,7 @@ const Home = () => {
             <Galaxy />
             <Skills />
             <Project />
+            <Contact />
         </main>
     )
 }

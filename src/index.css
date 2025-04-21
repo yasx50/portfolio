@@ -9,6 +9,7 @@ body {
     user-select: none;
 }
 
-h3 {
+h3,
+h4 {
     font-family: "Bebas Neue", sans-serif !important;
 }

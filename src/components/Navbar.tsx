@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppBar, Box, Toolbar, Typography, useScrollTrigger, Slide, useMediaQuery, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 
 interface HideOnScrollProps {
     children: React.ReactElement;
@@ -21,7 +19,6 @@ function HideOnScroll(props: HideOnScrollProps) {
 const Navbar = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [isVisible, setIsVisible] = useState(true);
 
     const navItems = [
         { label: 'Skills', path: '#skills' },

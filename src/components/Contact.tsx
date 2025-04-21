@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, FormControl, Input, InputLabel, Typography, Button } from "@mui/material"
 import { motion } from "motion/react"
 import { styled } from "@mui/material/styles"
@@ -27,6 +26,18 @@ const fadeInUp = {
         }
     })
 }
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3
+        }
+    }
+};
+
 
 const StyledFormControl = styled(FormControl)({
     marginBottom: "1.5rem",
@@ -139,47 +150,31 @@ const Contact = () => {
             className="container mx-auto px-6 py-24 md:py-32 relative"
             sx={{
                 background: "radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
-            }}
-        >
-            {/* <Box
-                component={motion.div}
-                sx={{
-                    position: "absolute",
-                    top: "10%",
-                    right: "5%",
-                    width: "200px",
-                    height: "200px",
-                    borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
-                    filter: "blur(40px)",
-                    zIndex: 0,
-                }}
-            /> */}
-            {/* <Box
-                component={motion.div}
-                sx={{
-                    position: "absolute",
-                    bottom: "20%",
-                    left: "10%",
-                    width: "300px",
-                    height: "300px",
-                    borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
-                    filter: "blur(60px)",
-                    zIndex: 0,
-                }}
-            /> */}
+                padding: {
+                    xs: "2rem 1rem",
+                    sm: "3rem 2rem",
+                    md: "4rem 3rem",
+                    lg: "6rem 4rem"
+                }
+            }}>
 
             {/* Main content */}
             <Box component={motion.div}
                 variants={fadeInUp}
                 custom={0}
                 mb={10}
-                sx={{ position: "relative", zIndex: 1, paddingX: "10rem" }}
+                sx={{
+                    position: "relative", zIndex: 1, paddingX: {
+                        xs: "1rem",
+                        sm: "2rem",
+                        md: "5rem",
+                        lg: "10rem"
+                    }
+                }}
             >
                 <Typography
                     variant="h4"
-                    fontSize={"2.5rem"}
+                    // fontSize={"2.5rem"}
                     mb={3}
                     component={motion.h4}
                     variants={fadeInUp}
@@ -190,6 +185,15 @@ const Contact = () => {
                         WebkitTextFillColor: "transparent",
                         fontWeight: 700,
                         letterSpacing: "0.05em",
+                        fontSize: {
+                            xs: "1.8rem",
+                            sm: "2rem",
+                            md: "2.5rem"
+                        },
+                        textAlign: {
+                            xs: "center",
+                            md: "left"
+                        },
                     }}
                 >
                     Beyond the Code
@@ -201,7 +205,15 @@ const Contact = () => {
                     variants={fadeInUp}
                     custom={2}
                     sx={{
-                        fontSize: "1.1rem",
+                        fontSize: {
+                            xs: "0.9rem",
+                            sm: "1rem",
+                            md: "1.1rem"
+                        },
+                        textAlign: {
+                            xs: "center",
+                            md: "left"
+                        },
                         lineHeight: 1.8,
                         letterSpacing: "0.02em",
                         fontWeight: 300,
@@ -277,8 +289,13 @@ const Contact = () => {
                     {/* Contact form */}
                     <Box
                         component={motion.form}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         custom={5}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                         className="flex-1"
                         sx={{
                             display: "flex",
@@ -369,165 +386,236 @@ const Contact = () => {
                             }}
                         >
                             {/* Email */}
-                            <ContactItem>
-                                <Box
-                                    component={"a"}
-                                    href="mailto:rohitkhatri.dev@gmail.com"
-                                    sx={{
-                                        borderRadius: "50%",
-                                        width: "45px",
-                                        height: "45px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
-                                        boxShadow: `0 0 15px ${COLORS.primary}40`,
-                                    }}
-                                >
-                                    <Icon
-                                        icon="lets-icons:e-mail"
-                                        width={24}
-                                        height={24}
-                                        style={{ color: COLORS.secondary }}
-                                    />
-                                </Box>
-                                <Typography
-                                    component={"a"}
-                                    href="mailto:rohitkhatri.dev@gmail.com"
-                                    sx={{
-                                        fontSize: "1.1rem",
-                                        fontWeight: 300,
-                                        letterSpacing: "0.05em",
-                                        color: COLORS.lightText,
-                                    }}
-                                >
-                                    rohitkhatri.dev@gmail.com
-                                </Typography>
-                            </ContactItem>
+                            <Box
+                                component={motion.div}
+                                whileHover={{
+                                    x: 20,
+                                    transition: { type: "spring", stiffness: 300 }
+                                }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeInUp}>
+
+                                <ContactItem>
+                                    <Box
+                                        component={"a"}
+                                        href="mailto:rohitkhatri.dev@gmail.com"
+                                        sx={{
+                                            borderRadius: "50%",
+                                            width: "45px",
+                                            height: "45px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
+                                            boxShadow: `0 0 15px ${COLORS.primary}40`,
+                                        }}
+                                    >
+                                        <Icon
+                                            icon="lets-icons:e-mail"
+                                            width={24}
+                                            height={24}
+                                            style={{ color: COLORS.secondary }}
+                                        />
+                                    </Box>
+                                    <Typography
+                                        component={"a"}
+                                        href="mailto:rohitkhatri.dev@gmail.com"
+                                        sx={{
+                                            fontSize: "1.1rem",
+                                            fontWeight: 300,
+                                            letterSpacing: "0.05em",
+                                            color: COLORS.lightText,
+                                        }}
+                                    >
+                                        rohitkhatri.dev@gmail.com
+                                    </Typography>
+                                </ContactItem>
+                            </Box>
 
                             {/* Phone */}
-                            <ContactItem >
-                                <Box
-                                    component={"a"}
-                                    href="tel:+916375519489"
-                                    sx={{
-                                        borderRadius: "50%",
-                                        width: "45px",
-                                        height: "45px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
-                                        boxShadow: `0 0 15px ${COLORS.primary}40`,
-                                    }}
-                                >
-                                    <Icon
-                                        icon="noto:telephone-receiver"
-                                        width={24}
-                                        height={24}
-                                        style={{ color: COLORS.secondary }}
-                                    />
-                                </Box>
-                                <Typography
-                                    component={"a"}
-                                    href="tel:+916375519489"
-                                    sx={{
-                                        fontSize: "1.1rem",
-                                        fontWeight: 300,
-                                        letterSpacing: "0.05em",
-                                        color: COLORS.lightText,
-                                    }}
-                                >
-                                    +91 6375519489
-                                </Typography>
-                            </ContactItem>
+                            <Box
+                                component={motion.div}
+                                whileHover={{
+                                    x: 20,
+                                    transition: { type: "spring", stiffness: 300 }
+                                }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeInUp}>
+                                <ContactItem>
+                                    <Box
+                                        component={"a"}
+                                        href="tel:+916375519489"
+                                        sx={{
+                                            borderRadius: "50%",
+                                            width: "45px",
+                                            height: "45px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
+                                            boxShadow: `0 0 15px ${COLORS.primary}40`,
+                                        }}
+                                    >
+                                        <Icon
+                                            icon="noto:telephone-receiver"
+                                            width={24}
+                                            height={24}
+                                            style={{ color: COLORS.secondary }}
+                                        />
+                                    </Box>
+                                    <Typography
+                                        component={"a"}
+                                        href="tel:+916375519489"
+                                        sx={{
+                                            fontSize: "1.1rem",
+                                            fontWeight: 300,
+                                            letterSpacing: "0.05em",
+                                            color: COLORS.lightText,
+                                        }}
+                                    >
+                                        +91 6375519489
+                                    </Typography>
+                                </ContactItem>
+                            </Box>
 
                             {/* Location */}
-                            <ContactItem>
-                                <Box
-                                    sx={{
-                                        borderRadius: "50%",
-                                        width: "45px",
-                                        height: "45px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
-                                        boxShadow: `0 0 15px ${COLORS.primary}40`,
-                                    }}
-                                >
-                                    <Icon
-                                        icon="fluent-color:location-ripple-16"
-                                        width={24}
-                                        height={24}
-                                        style={{ color: COLORS.secondary }}
-                                    />
-                                </Box>
-                                <Typography
-                                    sx={{
-                                        fontSize: "1.1rem",
-                                        fontWeight: 300,
-                                        letterSpacing: "0.05em",
-                                        color: COLORS.lightText,
-                                    }}
-                                >
-                                    Ajmer, Rajasthan, India
-                                </Typography>
-                            </ContactItem>
+                            <Box
+                                component={motion.div}
+                                whileHover={{
+                                    x: 20,
+                                    transition: { type: "spring", stiffness: 300 }
+                                }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeInUp}>
+                                <ContactItem>
+                                    <Box
+                                        sx={{
+                                            borderRadius: "50%",
+                                            width: "45px",
+                                            height: "45px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            background: `linear-gradient(135deg, ${COLORS.primary}40, ${COLORS.secondary}40)`,
+                                            boxShadow: `0 0 15px ${COLORS.primary}40`,
+                                        }}
+                                    >
+                                        <Icon
+                                            icon="fluent-color:location-ripple-16"
+                                            width={24}
+                                            height={24}
+                                            style={{ color: COLORS.secondary }}
+                                        />
+                                    </Box>
+                                    <Typography
+                                        sx={{
+                                            fontSize: "1.1rem",
+                                            fontWeight: 300,
+                                            letterSpacing: "0.05em",
+                                            color: COLORS.lightText,
+                                        }}
+                                    >
+                                        Ajmer, Rajasthan, India
+                                    </Typography>
+                                </ContactItem>
+                            </Box>
                         </Box>
 
                         {/* Social icons */}
                         <Box
                             component={motion.div}
-                            variants={fadeInUp}
-                            custom={8}
+                            variants={staggerContainer}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
                             sx={{
                                 display: "flex",
-                                justifyContent: "space-between",
+                                justifyContent: {
+                                    xs: "center",
+                                    sm: "space-between"
+                                },
+                                flexWrap: "wrap",
                                 gap: "1rem",
                                 marginTop: "1.5rem",
                                 padding: "1rem",
                             }}
                         >
-                            <SocialIcon>
-                                <Icon
-                                    icon="mdi:github"
-                                    width={24}
-                                    height={24}
-                                    style={{ color: COLORS.lightText }}
-                                    className="transition-all duration-300"
-                                />
-                            </SocialIcon>
-                            <SocialIcon>
-                                <Icon
-                                    icon="bi:twitter-x"
-                                    width={22}
-                                    height={22}
-                                    style={{ color: COLORS.lightText }}
-                                    className="transition-all duration-300"
-                                />
-                            </SocialIcon>
-                            <SocialIcon>
-                                <Icon
-                                    icon="logos:linkedin-icon"
-                                    width={22}
-                                    height={22}
-                                    className="transition-all duration-300"
-                                />
-                            </SocialIcon>
-                            <SocialIcon>
-                                <Icon
-                                    icon="skill-icons:instagram"
-                                    width={22}
-                                    height={22}
-                                    className="transition-all duration-300"
-                                />
-                            </SocialIcon>
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 360 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <SocialIcon>
+                                    <Box component={"a"} href="https://github.com/khatri-rohit">
+                                        <Icon
+                                            icon="mdi:github"
+                                            width={24}
+                                            height={24}
+                                            style={{ color: COLORS.lightText }}
+                                            className="transition-all duration-300"
+                                        />
+                                    </Box>
+                                </SocialIcon>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 360 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <SocialIcon>
+                                    <Box component={"a"} href="https://x.com/rohit_khatri302">
+                                        <Icon
+                                            icon="bi:twitter-x"
+                                            width={22}
+                                            height={22}
+                                            style={{ color: COLORS.lightText }}
+                                            className="transition-all duration-300"
+                                        />
+                                    </Box>
+                                </SocialIcon>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 360 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <SocialIcon>
+                                    <Box component={"a"} href="https://www.linkedin.com/in/rohitkhatri302">
+                                        <Icon
+                                            icon="logos:linkedin-icon"
+                                            width={22}
+                                            height={22}
+                                            className="transition-all duration-300"
+                                        />
+                                    </Box>
+                                </SocialIcon>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 360 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <SocialIcon>
+                                    <Box component={"a"} href="https://www.instagram.com/rohitkhatri.dev/">
+                                        <Icon
+                                            icon="skill-icons:instagram"
+                                            width={22}
+                                            height={22}
+                                            className="transition-all duration-300"
+                                        />
+                                    </Box>
+                                </SocialIcon>
+                            </motion.div>
                         </Box>
                     </Box>
                 </Box>
-            </Box>
-        </Box>
+            </Box >
+        </Box >
     )
 }
 

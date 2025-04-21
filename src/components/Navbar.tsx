@@ -1,5 +1,4 @@
-import { AppBar, Box, Button, Toolbar, Typography, useScrollTrigger, Slide } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { AppBar, Box, Toolbar, Typography, useScrollTrigger, Slide } from '@mui/material';
 
 interface HideOnScrollProps {
     children: React.ReactElement;
@@ -17,7 +16,6 @@ function HideOnScroll(props: HideOnScrollProps) {
 }
 
 const Navbar = () => {
-    const navigate = useNavigate();
 
     const navItems = [
         { label: 'Skills', path: '#skills' },
@@ -44,22 +42,24 @@ const Navbar = () => {
 
                     <Box sx={{ display: 'flex', gap: 4 }}>
                         {navItems.map((item) => (
-                            <Button
+                            <Box
+                                component={"a"}
+                                href={item.path}
                                 key={item.label}
                                 color="inherit"
-                                onClick={() => navigate(item.path)}
                                 sx={{
                                     fontSize: '1.25rem',
                                     textTransform: 'none',
                                     fontWeight: 'normal',
                                     '&:hover': {
-                                        backgroundColor: 'transparent',
+                                        color: '#EAD196',
+                                        backgroundColor: "transparent",
                                         opacity: 0.8,
                                     }
                                 }}
                             >
                                 {item.label}
-                            </Button>
+                            </Box>
                         ))}
                     </Box>
                 </Toolbar>

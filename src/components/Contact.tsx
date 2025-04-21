@@ -1,10 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, FormControl, Input, InputLabel, Typography, Button } from "@mui/material"
 import { motion } from "motion/react"
 import { styled } from "@mui/material/styles"
 import { Icon } from "@iconify/react/dist/iconify.js"
-import React from "react"
 
-// Color palette constants for consistent theming
 const COLORS = {
     primary: "#8A2BE2", // Vibrant purple
     secondary: "#00FFFF", // Cyan for accents
@@ -16,7 +15,6 @@ const COLORS = {
     accentGlow: "0 0 15px rgba(138, 43, 226, 0.6)",
 }
 
-// Animation variants for consistent motion
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: (custom) => ({
@@ -30,7 +28,6 @@ const fadeInUp = {
     })
 }
 
-// Styled components for custom styling
 const StyledFormControl = styled(FormControl)({
     marginBottom: "1.5rem",
     width: "100%",
@@ -137,6 +134,7 @@ const ContactItem = styled(Box)(({ theme }) => ({
 const Contact = () => {
     return (
         <Box
+            id="contact"
             component={motion.section}
             className="container mx-auto px-6 py-24 md:py-32 relative"
             sx={{

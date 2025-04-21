@@ -22,6 +22,9 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 className="text-3xl w-1/2 !mx-auto text-center font-extralight !mt-10"
+                sx={{
+                    textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                }}
                 paragraph
             >
                 Hi, I'm{' '}

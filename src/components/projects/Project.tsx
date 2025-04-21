@@ -8,7 +8,7 @@ const Project = () => {
     const [img2, setImg2] = useState(1);
 
     return (
-        <Container component={motion.section} className="container py-20">
+        <Container id="projects" component={motion.section} className="container py-20">
             <Typography
                 variant="h3"
                 component={motion.h3}

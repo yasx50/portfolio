@@ -138,7 +138,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="lg:container mx-auto p-32 pt-28">
+        <section id="skills" ref={sectionRef} className="lg:container mx-auto p-32 pt-28">
             <h3 ref={titleRef} className="text-[2.5rem] text-center mb-20 text-shadow-black text-shadow-xs uppercase">
                 Languages & Technologies
             </h3>

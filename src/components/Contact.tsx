@@ -94,7 +94,7 @@ const GlowButton = styled(Button)({
     },
 });
 
-const SocialIcon = styled(Box)(({ theme }) => ({
+const SocialIcon = styled(Box)(() => ({
     borderRadius: "50%",
     background: COLORS.glassBg,
     display: "flex",
@@ -113,7 +113,7 @@ const SocialIcon = styled(Box)(({ theme }) => ({
     }
 }));
 
-const ContactItem = styled(Box)(({ theme }) => ({
+const ContactItem = styled(Box)(() => ({
     display: "flex",
     alignItems: "center",
     gap: "1rem",

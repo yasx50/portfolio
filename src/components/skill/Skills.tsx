@@ -88,9 +88,7 @@ const skills = [
         icon: <Icon icon="devicon:java" width={70} height={70} />,
     },
 ];
-
 const Skills = () => {
-
     const sectionRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const cardsRef = useRef<HTMLDivElement>(null);
@@ -114,43 +112,72 @@ const Skills = () => {
             }
         );
 
+        // Enhanced cards animation
         if (cardsRef.current) {
             const cards = Array.from(cardsRef.current.children);
+
             gsap.fromTo(
                 cards,
                 {
                     opacity: 0,
                     y: 40,
+                    scale: 0.8,
+                    rotation: -5,
                 },
                 {
                     opacity: 1,
                     y: 0,
+                    scale: 1,
+                    rotation: 0,
                     duration: 1,
-                    stagger: 0.2,
-                    ease: "power2.out",
+                    stagger: 0.1,
+                    ease: "back.out(1.2)",
                     scrollTrigger: {
                         trigger: cardsRef.current,
                         start: "top 80%",
+                        toggleActions: "play none none reverse"
                     },
                 }
             );
+
+            cards.forEach(card => {
+                gsap.to(card, {
+                    paused: true,
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+            });
         }
     }, []);
 
     return (
-        <section id="skills" ref={sectionRef} className="lg:container mx-auto p-32 pt-28">
-            <h3 ref={titleRef} className="text-[2.5rem] text-center mb-20 text-shadow-black text-shadow-xs uppercase">
+        <section
+            id="skills"
+            ref={sectionRef}
+            className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28"
+        >
+            <h3
+                ref={titleRef}
+                className="text-[2rem] sm:text-[2.25rem] lg:text-[2.5rem] text-center mb-12 sm:mb-16 lg:mb-20 text-shadow-black text-shadow-xs uppercase"
+            >
                 Languages & Technologies
             </h3>
 
-            <div ref={cardsRef} className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 md:px-0 gap-5 snap-center mx-auto">
-                {skills.map((skill, _) => (
-                    <TiltCard key={_} icon={skill.icon}
-                        skill={skill.skill} />
+            <div
+                ref={cardsRef}
+                className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 mx-auto max-w-7xl"
+            >
+                {skills.map((skill, index) => (
+                    <TiltCard
+                        key={`${skill.id}-${index}`}
+                        icon={skill.icon}
+                        skill={skill.skill}
+                    />
                 ))}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Skills
+export default Skills;

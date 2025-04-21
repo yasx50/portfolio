@@ -4,7 +4,7 @@
 body {
     height: 100%;
     width: 100%;
-    color: white;
-    font-family: "Bebas Neue", sans-serif;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif !important;
     user-select: none;
 }

@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/Navbar"
+import MUIProvider from "../theme/ThemeProvider" // Import our MUI provider
 
 const Layout = () => {
     return (
-        <main className="mx-auto relative h-full">
-            <Navbar />
-            <Outlet />
-        </main>
+        <MUIProvider>
+            <main className="mx-auto relative h-full">
+                <Navbar />
+                <Outlet />
+            </main>
+        </MUIProvider>
     )
 }
 

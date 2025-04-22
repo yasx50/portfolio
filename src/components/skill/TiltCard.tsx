@@ -88,13 +88,17 @@ const TiltCard = ({ icon, skill }: CardProps) => {
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                     elevation={0}
-                    className="relative min-h-44 w-full !bg-gradient-to-tl !from-slate-800 !via-[#162236] !to-zinc-900 to-75% !rounded-2xl overflow-hidden !flex !items-center !justify-center transform-gpu will-change-transform grayscale hover:grayscale-0 transition-colors duration-500"
+                    className="relative min-h-44 w-full !rounded-2xl overflow-hidden !flex !items-center !justify-center transform-gpu will-change-transform transition-all duration-500 group"
                     sx={{
-                        transition: "filter 500ms",
+                        background: "linear-gradient(to top left, #1d293d, #162236, #18181b 75%)",
+                        transition: "all 500ms",
                         "&:hover": {
-                            filter: "grayscale(0)",
+                            background: "linear-gradient(to top left, rgba(16, 14, 45, 0.85), rgba(25, 18, 54, 0.9), rgba(8, 5, 23, 0.95))",
+                            boxShadow: `
+                        0 0 20px 5px rgba(255, 255, 255, 0.1),
+                        inset 0 0 20px 5px rgba(255, 255, 255, 0.1)
+                    `,
                         },
-                        filter: "grayscale(1)",
                     }}
                 >
                     <Box
@@ -102,7 +106,7 @@ const TiltCard = ({ icon, skill }: CardProps) => {
                         className="absolute inset-0 rounded-2xl blur-xl shadow-[0_0_50px_20px_rgb(255, 248, 248)] ring-[15px] ring-[#ffffff]"
                     />
 
-                    <CardContent className="relative z-10 w-3/4 h-3/4 flex items-center justify-center">
+                    <CardContent className="relative z-10 w-3/4 h-3/4 flex items-center justify-center grayscale-100 group-hover:grayscale-0">
                         {icon}
                     </CardContent>
                 </Card>

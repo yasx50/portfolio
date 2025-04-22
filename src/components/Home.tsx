@@ -1,4 +1,4 @@
-import Galaxy from "../Spline/Galaxy"
+import LazySpline from "../Spline/LaxySpline"
 import Contact from "./Contact"
 import Footer from "./Footer"
 import Hero from "./Hero"
@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <main>
             <Hero />
-            <Galaxy />
+            <LazySpline />
             <Skills />
             <Project />
             <Contact />

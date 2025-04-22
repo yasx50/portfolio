@@ -1,15 +1,19 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useState, useEffect, useRef } from "react"
+import axios, { AxiosError } from 'axios';
 import { motion } from "motion/react"
 import { Box, FormControl, Input, InputLabel, Typography, Button, Alert, Snackbar, SnackbarCloseReason } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { Icon } from "@iconify/react/dist/iconify.js"
-import axios, { AxiosError } from 'axios';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const COLORS = {
-    primary: "#8A2BE2", // Vibrant purple
-    secondary: "#00FFFF", // Cyan for accents
-    tertiary: "#FF4081", // Pink for hover effects
+    primary: "#8A2BE2",
+    secondary: "#00FFFF",
+    tertiary: "#FF4081",
     darkBg: "rgba(10, 10, 15, 0.7)",
     glassBg: "rgba(30, 30, 40, 0.4)",
     lightText: "#FFFFFF",
@@ -18,13 +22,13 @@ const COLORS = {
 }
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 80 },
     visible: (custom) => ({
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.7,
-            delay: custom * 0.2,
+            duration: 0.9,
+            delay: custom * 0.1,
             ease: [0.25, 0.1, 0.25, 1.0]
         }
     })
@@ -152,6 +156,11 @@ type Form = {
 }
 
 const Contact = () => {
+    const containerRef = useRef(null);
+    const titleRef = useRef(null);
+    const textRef = useRef(null);
+    const ctaRef = useRef(null);
+
 
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState<Form>({
@@ -200,6 +209,45 @@ const Contact = () => {
         setOpen(false);
     };
 
+    useEffect(() => {
+        gsap.set([titleRef.current, textRef.current, ctaRef.current], {
+            opacity: 0,
+            y: 50
+        });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        tl.to(titleRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        })
+            .to(textRef.current, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.5")
+            .to(ctaRef.current, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.3");
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            tl.kill();
+        };
+    }, []);
+
     return (
 
         <>
@@ -227,12 +275,14 @@ const Contact = () => {
                 }}>
 
                 {/* Main content */}
-                <Box component={motion.div}
-                    variants={fadeInUp}
-                    custom={0}
+                <Box
+                    ref={containerRef}
+                    component="div"
                     mb={10}
                     sx={{
-                        position: "relative", zIndex: 1, paddingX: {
+                        position: "relative",
+                        zIndex: 1,
+                        paddingX: {
                             xs: "1rem",
                             sm: "2rem",
                             md: "5rem",
@@ -241,12 +291,9 @@ const Contact = () => {
                     }}
                 >
                     <Typography
+                        ref={titleRef}
                         variant="h4"
-                        // fontSize={"2.5rem"}
                         mb={3}
-                        component={motion.h4}
-                        variants={fadeInUp}
-                        custom={1}
                         sx={{
                             background: `linear-gradient(135deg, ${COLORS.secondary} 0%, ${COLORS.primary} 100%)`,
                             WebkitBackgroundClip: "text",
@@ -268,10 +315,8 @@ const Contact = () => {
                     </Typography>
 
                     <Typography
+                        ref={textRef}
                         variant="body1"
-                        component={motion.p}
-                        variants={fadeInUp}
-                        custom={2}
                         sx={{
                             fontSize: {
                                 xs: "0.9rem",
@@ -285,7 +330,6 @@ const Contact = () => {
                             lineHeight: 1.8,
                             letterSpacing: "0.02em",
                             fontWeight: 300,
-                            // maxWidth: "900px",
                             color: "rgba(255,255,255,0.9)",
                             textShadow: "0 2px 4px rgba(0,0,0,0.3)",
                         }}
@@ -302,6 +346,17 @@ const Contact = () => {
                             fontWeight: 500,
                             letterSpacing: "0.05em",
                         }}>
+                            Let's build the future together.
+                        </Box>
+                        <Box
+                            ref={ctaRef}
+                            component="span"
+                            sx={{
+                                color: COLORS.secondary,
+                                fontWeight: 500,
+                                letterSpacing: "0.05em",
+                            }}
+                        >
                             Let's build the future together.
                         </Box>
                     </Typography>

@@ -1,10 +1,13 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import gsap from "gsap";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Project = () => {
     const [img1, setImg1] = useState(1);
     const [img2, setImg2] = useState(1);
+
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     // Animation variants
     const containerVariants = {
@@ -41,6 +44,75 @@ const Project = () => {
         }
     };
 
+    useEffect(() => {
+        // Main project container animation
+        gsap.fromTo(
+            "#project",
+            {
+                opacity: 0,
+                y: 100,
+                scale: 0.8
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: {
+                    amount: 0.4,
+                    from: "start"
+                },
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 80%",
+                    end: "bottom 50%",
+                    markers: true,
+                    scrub: 1,
+                    toggleActions: "play none none reverse"
+                },
+            }
+        );
+
+        // Add hover animation
+        gsap.utils.toArray("#project").forEach((project: any) => {
+            gsap.to(project, {
+                scale: 1.02,
+                duration: 0.3,
+                ease: "power2.out",
+                paused: true,
+                yoyo: true,
+                repeat: 0,
+                scrollTrigger: {
+                    trigger: project,
+                    start: "top bottom",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Add hover listeners
+            project.addEventListener("mouseenter", () => {
+                gsap.to(project, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            project.addEventListener("mouseleave", () => {
+                gsap.to(project, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.in"
+                });
+            });
+        });
+
+        // Cleanup
+        return () => {
+            gsap.killTweensOf("#project");
+        };
+    }, []);
     return (
         <Container
             id="projects"
@@ -50,6 +122,7 @@ const Project = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
+            ref={sectionRef}
         >
             <Typography
                 variant="h3"
@@ -62,7 +135,7 @@ const Project = () => {
 
             <Grid container spacing={{ xs: 4, md: 6 }}>
                 {/* Subscription Tracker */}
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid id="project" size={{ xs: 12, md: 6 }}>
                     <motion.div variants={projectVariants}>
                         <Typography variant="h5" className="font-semibold mb-3 text-white text-xl md:text-2xl tracking-wide">
                             Subscription Tracker
@@ -113,7 +186,7 @@ const Project = () => {
                 </Grid>
 
                 {/* Dev Discuss */}
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid id="project" size={{ xs: 12, md: 6 }}>
                     <motion.div variants={projectVariants}>
                         <Typography variant="h5" className="font-semibold mb-3 text-white text-xl md:text-2xl tracking-wide">
                             Dev Discuss

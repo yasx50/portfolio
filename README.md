@@ -13,18 +13,23 @@ A meticulously crafted, high-performance portfolio showcasing the synergy of des
 
 ## 📁 Project Structure
 
-├── public/              # Static assets
-├── src/
-│   ├── assets/         # Media files (icons, images)
-│   ├── components/     # Modular UI components
-│   ├── constants/      # Skills & site configs
-│   ├── Spline/         # Galaxy.spline integration
-│   ├── styles/         # Tailwind CSS extensions
-│   ├── App.tsx         # Main app logic
-│   └── main.tsx        # Entry point
-├── vite.config.ts       # Vite plugin config
-├── tsconfig.json        # TypeScript setup
-└── eslint.config.js     # ESLint rules
+```
+portfolio-2/
+├── public/                 # Static assets
+├── src/                    # Source code
+│   ├── assets/             # Images, fonts, and media
+│   ├── components/         # Reusable UI components
+│   ├── constants/          # Static data and configuration
+│   ├── pages/              # Individual route pages
+│   ├── styles/             # Tailwind config and global styles
+│   ├── App.tsx             # Root component
+│   └── main.tsx            # App entry point
+├── .eslintrc.js            # ESLint rules
+├── tsconfig.json           # TypeScript config
+├── vite.config.ts          # Vite dev server config
+├── package.json            # Project metadata
+└── README.md               # You're here
+```
 
 
 ## 🛠️ Tech Stack

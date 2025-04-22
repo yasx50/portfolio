@@ -173,7 +173,6 @@ const Contact = () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formData);
         try {
             if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
                 setOpen(true);
@@ -196,7 +195,6 @@ const Contact = () => {
             setStatus('error');
             setMessage(axiosError.response?.data?.message || 'Their is Something wrong with Server.. Try Later')
         }
-        console.log("Contact info: \n", formData);
     }
 
     const handleClose = (
@@ -265,7 +263,7 @@ const Contact = () => {
                 component={motion.section}
                 className="container mx-auto px-6 py-24 md:py-32 relative"
                 sx={{
-                    background: "radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+                    // background: "radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
                     padding: {
                         xs: "2rem 1rem",
                         sm: "3rem 2rem",
@@ -321,13 +319,13 @@ const Contact = () => {
                             fontSize: {
                                 xs: "0.9rem",
                                 sm: "1rem",
-                                md: "1.1rem"
+                                md: "1.2rem"
                             },
                             textAlign: {
                                 xs: "center",
                                 md: "left"
                             },
-                            lineHeight: 1.8,
+                            lineHeight: 1.5,
                             letterSpacing: "0.02em",
                             fontWeight: 300,
                             color: "rgba(255,255,255,0.9)",
@@ -345,18 +343,8 @@ const Contact = () => {
                             color: COLORS.secondary,
                             fontWeight: 500,
                             letterSpacing: "0.05em",
+                            fontSize: "1.5rem"
                         }}>
-                            Let's build the future together.
-                        </Box>
-                        <Box
-                            ref={ctaRef}
-                            component="span"
-                            sx={{
-                                color: COLORS.secondary,
-                                fontWeight: 500,
-                                letterSpacing: "0.05em",
-                            }}
-                        >
                             Let's build the future together.
                         </Box>
                     </Typography>
@@ -386,7 +374,8 @@ const Contact = () => {
                             fontWeight: 800,
                             letterSpacing: "0.3em",
                             color: COLORS.lightText,
-                            textShadow: `0 0 20px ${COLORS.primary}`,
+                            // textShadow: `0 0 20px ${COLORS.primary}`,
+                            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
                             position: "relative",
                             "&:after": {
                                 content: '""',

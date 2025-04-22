@@ -53,7 +53,7 @@ const Hero = () => {
                 animate="visible"
                 className="uppercase text-center !text-4xl sm:!text-5xl md:!text-6xl lg:!text-[7rem] leading-tight !font-bold tracking-wider md:tracking-widest"
                 sx={{
-                    textShadow: "0 2px 5px rgba(0, 0, 0, 0.6)",
+                    textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
                 }}>
                 frontend developer
             </Typography>
@@ -66,7 +66,7 @@ const Hero = () => {
                 animate="visible"
                 className="!text-xl md:!text-2xl lg:!text-3xl w-full md:w-3/4 lg:w-1/2 !mx-auto text-center font-extralight !mt-4 md:!mt-6 lg:!mt-10"
                 sx={{
-                    textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.2)",
                 }}
                 paragraph
             >

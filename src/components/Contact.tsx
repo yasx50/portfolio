@@ -164,6 +164,7 @@ const Contact = () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        console.log(formData);
         try {
             if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
                 setOpen(true);
@@ -176,10 +177,10 @@ const Contact = () => {
             const response = await axios.post(`${serverUri}/api/message`, {
                 email, message, name
             });
+            setFormData((prev) => ({ ...prev, email: "", message: "", name: "" }));
             setStatus('success');
             setMessage(response.data.message)
             setOpen(true);
-            setFormData((prev) => ({ ...prev, email: "", message: "", name: "" }));
         } catch (error) {
             const axiosError = error as AxiosError<{ message: string }>;
             setOpen(true);
@@ -395,6 +396,7 @@ const Contact = () => {
                                     id="name"
                                     name="name"
                                     onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                                    value={formData.name}
                                     fullWidth
                                 />
                             </StyledFormControl>
@@ -406,6 +408,7 @@ const Contact = () => {
                                     name="email"
                                     type="email"
                                     onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                                    value={formData.email}
                                     fullWidth
                                 />
                             </StyledFormControl>
@@ -416,6 +419,7 @@ const Contact = () => {
                                     id="message"
                                     name="message"
                                     onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+                                    value={formData.message}
                                     multiline
                                     rows={4}
                                     fullWidth

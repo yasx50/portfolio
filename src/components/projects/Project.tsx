@@ -67,7 +67,7 @@ const Project = () => {
                     trigger: sectionRef.current,
                     start: "top 80%",
                     end: "bottom 50%",
-                    markers: true,
+                    // markers: true,
                     scrub: 1,
                     toggleActions: "play none none reverse"
                 },

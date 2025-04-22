@@ -400,7 +400,7 @@ const Contact = () => {
                             </StyledFormControl>
 
                             <StyledFormControl>
-                                <InputLabel htmlFor="email">Email</InputLabel>
+                                <InputLabel htmlFor="email">Your Email</InputLabel>
                                 <Input
                                     id="email"
                                     name="email"

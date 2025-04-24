@@ -30,7 +30,7 @@ const Hero = () => {
     };
 
     // Letter animation for name
-    const nameLetters = "Rohit Khatri".split("");
+    const nameLetters = "RohitKhatri".split("");
     const letterVariants = {
         hover: {
             y: -5,
@@ -64,9 +64,9 @@ const Hero = () => {
                 variants={descriptionVariants}
                 initial="hidden"
                 animate="visible"
-                className="!text-xl md:!text-2xl lg:!text-3xl w-full md:w-3/4 lg:w-1/2 !mx-auto text-center font-extralight !mt-4 md:!mt-6 lg:!mt-10"
+                className="!text-xl md:!text-2xl lg:!text-3xl w-full md:w-3/4 lg:w-1/2 !mx-auto text-center font-extralight !mt-4 md:!mt-6 lg:!mt-10 text-gray-200"
                 sx={{
-                    textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                    textShadow: " 0 1px 3px rgba(0, 0, 0, 0.5)",
                 }}
                 paragraph
             >

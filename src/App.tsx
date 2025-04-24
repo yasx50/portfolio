@@ -11,11 +11,6 @@ const App = () => {
   useEffect(() => {
     const lenis = new Lenis();
     lenisRef.current = lenis;
-
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    })
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);

@@ -327,9 +327,8 @@ const Contact = () => {
                             },
                             lineHeight: 1.5,
                             letterSpacing: "0.02em",
-                            fontWeight: 300,
-                            color: "rgba(255,255,255,0.9)",
-                            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                            fontWeight: 400,
+                            textShadow: "0 2px 4px rgba(0,0,0,0.6)",
                         }}
                     >
                         In every pixel I perfect and every interaction I refine, I see more than just design, I see possibility.
@@ -343,7 +342,8 @@ const Contact = () => {
                             color: COLORS.secondary,
                             fontWeight: 500,
                             letterSpacing: "0.05em",
-                            fontSize: "1.5rem"
+                            fontSize: "1.5rem",
+                            textShadow: "0 2px 4px rgba(0,0,0,0.1)",
                         }}>
                             Let's build the future together.
                         </Box>

@@ -30,7 +30,7 @@ const Hero = () => {
     };
 
     // Letter animation for name
-    const nameLetters = "RohitKhatri".split("");
+    const nameLetters = "Yash Yadav".split("");
     const letterVariants = {
         hover: {
             y: -5,
@@ -55,7 +55,7 @@ const Hero = () => {
                 sx={{
                     textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
                 }}>
-                frontend developer
+                backend developer
             </Typography>
 
             <Typography
@@ -90,7 +90,7 @@ const Hero = () => {
                     transition={{ delay: 0.8, duration: 0.5 }}
                     className="block sm:inline mt-2 sm:mt-0"
                 >
-                    a developer from Rajasthan, India. I love creating impactful solutions and constantly learning through technology.
+                    a developer from Maharashtra, India. I love creating impactful solutions and constantly learning through technology.
                 </motion.span>
             </Typography>
         </Container>

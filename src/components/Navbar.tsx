@@ -88,7 +88,7 @@ const Navbar = () => {
                             className="text-4xl flex-1 uppercase !font-bold tracking-[0.2px]"
                             sx={{ flexGrow: 1 }}
                         >
-                            Rohit
+                            Yash
                         </Typography>
                     </motion.div>
 

@@ -189,12 +189,12 @@ const Project = () => {
                 <Grid id="project" size={{ xs: 12, md: 6 }}>
                     <motion.div variants={projectVariants}>
                         <Typography variant="h5" className="font-semibold mb-3 text-white text-xl md:text-2xl tracking-wide">
-                            Dev Discuss
+                            Talk To Titanic
                         </Typography>
 
                         <Box className="group relative p-2 md:p-4 border rounded-2xl bg-white/10 transition-all hover:shadow-lg">
                             <motion.img
-                                src={`/img/projects/devdiscuss/${img2}.png`}
+                                src={`/img/projects/tailortalk/${img1}.png`}
                                 className="rounded-xl group-hover:blur-xs duration-500 h-[15rem] md:h-[18.4rem] w-full object-cover"
                                 alt="dev discuss"
                                 whileHover={{ scale: 1.02 }}
@@ -210,7 +210,7 @@ const Project = () => {
                                         color="inherit"
                                         className="!text-xl md:!text-2xl invisible group-hover:visible transition-opacity duration-500"
                                         style={{ padding: ".5rem 1rem" }}
-                                        href="https://discussdev.vercel.app/"
+                                        href="https://tailortalk.streamlit.app/"
                                     >
                                         View
                                     </Button>
@@ -224,7 +224,7 @@ const Project = () => {
                                     <motion.img
                                         onMouseEnter={() => setImg2(num)}
                                         onMouseLeave={() => setImg2(1)}
-                                        src={`/img/projects/devdiscuss/${num}.png`}
+                                        src={`/img/projects/tailortalk/${num}.png`}
                                         className="rounded-lg w-full h-[4rem] md:h-[6rem] object-cover"
                                         alt={`dev discuss ${num}`}
                                         whileHover={{ scale: 1.05 }}

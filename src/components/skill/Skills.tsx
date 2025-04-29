@@ -14,8 +14,8 @@ const skills = [
     },
     {
         id: 3,
-        skill: "ReactJS",
-        icon: <Icon icon="logos:react" width={70} height={70} />,
+        skill: "Python",
+        icon: <Icon icon="logos:python" width={70} height={70} />,
     },
     {
         id: 4,
@@ -24,28 +24,44 @@ const skills = [
     },
     {
         id: 5,
-        skill: "Redux",
-        icon: <Icon icon="logos:redux" width={70} height={70} />,
+        skill: "Flask",
+        icon: <Icon icon="logos:flask" width={70} height={70} />,
     },
     {
         id: 5,
-        skill: "Tailwind CSS",
-        icon: <Icon icon="devicon:tailwindcss" width={70} height={70} />,
+        skill: "Node Js",
+        icon: <Icon icon="devicon:nodejs-wordmark" width={70} height={70} />,
     },
     {
         id: 5,
-        skill: "Bootstrap",
-        icon: <Icon icon="devicon:bootstrap" width={70} height={70} />,
+        skill: "FastApi",
+        icon: <Icon icon="devicon:fastapi" width={70} height={70} />,
     },
     {
         id: 5,
-        skill: "Material UI",
-        icon: <Icon icon="logos:material-ui" width={70} height={70} />,
+        skill: "Express",
+        icon: <Icon icon="skill-icons:expressjs-light" width={70} height={70} />,
     },
     {
         id: 18,
-        skill: "Motion",
-        icon: <Icon icon="tabler:brand-framer-motion" width={70} height={70} />,
+        skill: "My SQL",
+        icon: <Icon icon="devicon:mysql" width={70} height={70} />,
+    },
+    {
+        id: 18,
+        skill: "MongoDB",
+        icon: <Icon icon="devicon:mongodb-wordmark" width={70} height={70} />,
+    },
+   
+    {
+        id: 6,
+        skill: "React",
+        icon: <Icon icon="devicon:react" width={70} height={70} />,
+    },
+    {
+        id: 7,
+        skill: "Streamlit",
+        icon: <Icon icon="devicon:streamlit" width={70} height={70} />,
     },
     {
         id: 18,
@@ -53,39 +69,24 @@ const skills = [
         icon: <Icon icon="logos:greensock-icon" width={70} height={70} />,
     },
     {
-        id: 6,
-        skill: "HTML",
-        icon: <Icon icon="devicon:html5" width={70} height={70} />,
-    },
-    {
-        id: 7,
-        skill: "CSS",
-        icon: <Icon icon="devicon:css3" width={70} height={70} />,
-    },
-    {
-        id: 8,
-        skill: "Node.js",
-        icon: <Icon icon="devicon:nodejs-wordmark" width={70} height={70} />,
-    },
-    {
         id: 9,
-        skill: "Express",
-        icon: <Icon icon="skill-icons:expressjs-light" width={70} height={70} />,
-    },
-    {
-        id: 10,
-        skill: "MongoDB",
-        icon: <Icon icon="devicon:mongodb-wordmark" width={70} height={70} />,
-    },
-    {
-        id: 13,
         skill: "Git",
         icon: <Icon icon="logos:git-icon" width={70} height={70} />,
     },
     {
+        id: 10,
+        skill: "GitHub",
+        icon: <Icon icon="devicon:github" width={70} height={70} />,
+    },
+    {
+        id: 13,
+        skill: "Heroku",
+        icon: <Icon icon="logos:heroku-icon" width={70} height={70} />,
+    },
+    {
         id: 2,
-        skill: "Java",
-        icon: <Icon icon="devicon:java" width={70} height={70} />,
+        skill: "Postman",
+        icon: <Icon icon="devicon:postman" width={70} height={70} />,
     },
 ];
 const Skills = () => {

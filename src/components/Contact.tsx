@@ -519,7 +519,7 @@ const Contact = () => {
                                     <ContactItem>
                                         <Box
                                             component={"a"}
-                                            href="mailto:rohitkhatri.dev@gmail.com"
+                                            href="mailto:yasxcode@gmail.com"
                                             sx={{
                                                 borderRadius: "50%",
                                                 width: "45px",
@@ -540,7 +540,7 @@ const Contact = () => {
                                         </Box>
                                         <Typography
                                             component={"a"}
-                                            href="mailto:rohitkhatri.dev@gmail.com"
+                                            href="mailto:yasxcode@gmail.com"
                                             sx={{
                                                 fontSize: "1.1rem",
                                                 fontWeight: 300,
@@ -548,7 +548,7 @@ const Contact = () => {
                                                 color: COLORS.lightText,
                                             }}
                                         >
-                                            rohitkhatri.dev@gmail.com
+                                        yasxcode@gmail.com
                                         </Typography>
                                     </ContactItem>
                                 </Box>
@@ -588,7 +588,7 @@ const Contact = () => {
                                         </Box>
                                         <Typography
                                             component={"a"}
-                                            href="tel:+916375519489"
+                                            href="tel:+91 8668267011"
                                             sx={{
                                                 fontSize: "1.1rem",
                                                 fontWeight: 300,
@@ -596,7 +596,7 @@ const Contact = () => {
                                                 color: COLORS.lightText,
                                             }}
                                         >
-                                            +91 6375519489
+                                            +91 8668267011
                                         </Typography>
                                     </ContactItem>
                                 </Box>
@@ -640,7 +640,7 @@ const Contact = () => {
                                                 color: COLORS.lightText,
                                             }}
                                         >
-                                            Ajmer, Rajasthan, India
+                                            Mumbai, Maharashtra, India
                                         </Typography>
                                     </ContactItem>
                                 </Box>
@@ -670,7 +670,7 @@ const Contact = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     <SocialIcon>
-                                        <Box component={"a"} href="https://github.com/khatri-rohit">
+                                        <Box component={"a"} href="https://github.com/yasx50">
                                             <Icon
                                                 icon="mdi:github"
                                                 width={24}
@@ -687,7 +687,7 @@ const Contact = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     <SocialIcon>
-                                        <Box component={"a"} href="https://x.com/rohit_khatri302">
+                                        <Box component={"a"} href="https://x.com/">
                                             <Icon
                                                 icon="bi:twitter-x"
                                                 width={22}
@@ -704,7 +704,7 @@ const Contact = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     <SocialIcon>
-                                        <Box component={"a"} href="https://www.linkedin.com/in/rohitkhatri302">
+                                        <Box component={"a"} href="https://www.linkedin.com/in/yash-yadav-y05/">
                                             <Icon
                                                 icon="logos:linkedin-icon"
                                                 width={22}
@@ -720,7 +720,7 @@ const Contact = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     <SocialIcon>
-                                        <Box component={"a"} href="https://www.instagram.com/rohitkhatri.dev/">
+                                        <Box component={"a"} href="https://www.instagram.com/yash___yadu1c/">
                                             <Icon
                                                 icon="skill-icons:instagram"
                                                 width={22}

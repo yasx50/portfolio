@@ -174,7 +174,7 @@ const Contact = () => {
         e.preventDefault();
         
         // Validate the form data
-        if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim())  {
             setStatus('info');
             setMessage("Please complete all fields before sending.");
             setOpen(true);
@@ -184,7 +184,7 @@ const Contact = () => {
         setLoading(true);
         
         // Use EmailJS to send the email
-        emailjs
+        if( formRef.current){emailjs
             .sendForm(
                 'service_nmpi3tp', 
                 'template_ita3xki', 
@@ -208,7 +208,7 @@ const Contact = () => {
             )
             .finally(() => {
                 setLoading(false);
-            });
+            });}
     };
 
     const handleClose = (

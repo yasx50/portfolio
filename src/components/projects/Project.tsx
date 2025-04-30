@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Project = () => {
     const [img1, setImg1] = useState(1);
-    const [img2, setImg2] = useState(1);
+    const [, setImg2] = useState(1);
 
     const sectionRef = useRef<HTMLDivElement>(null);
 

@@ -1,14 +1,13 @@
-import { FormEvent, useState, useEffect, useRef } from "react"
-import axios, { AxiosError } from 'axios';
+import { useState, useEffect, useRef } from "react"
 import { motion } from "motion/react"
 import { Box, FormControl, Input, InputLabel, Typography, Button, Alert, Snackbar, SnackbarCloseReason } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { Icon } from "@iconify/react/dist/iconify.js"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
-
 
 const COLORS = {
     primary: "#8A2BE2",
@@ -44,7 +43,6 @@ const staggerContainer = {
         }
     }
 };
-
 
 const StyledFormControl = styled(FormControl)({
     marginBottom: "1.5rem",
@@ -160,7 +158,7 @@ const Contact = () => {
     const titleRef = useRef(null);
     const textRef = useRef(null);
     const ctaRef = useRef(null);
-
+    const formRef = useRef(null);
 
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState<Form>({
@@ -170,32 +168,48 @@ const Contact = () => {
     });
     const [status, setStatus] = useState<'success' | 'error' | 'info'>('success');
     const [message, setMessage] = useState<string>('');
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-                setOpen(true);
-                setMessage("Incomplete Information to Submit");
-                setStatus('info');
-                return
-            }
-            const serverUri = import.meta.env.VITE_SERVER_URI || 'http://localhost:5500'
-            const { email, message, name } = formData;
-            const response = await axios.post(`${serverUri}/api/message`, {
-                email, message, name
-            });
-            setFormData((prev) => ({ ...prev, email: "", message: "", name: "" }));
-            setStatus('success');
-            setMessage(response.data.message)
+        
+        // Validate the form data
+        if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+            setStatus('info');
+            setMessage("Please complete all fields before sending.");
             setOpen(true);
-        } catch (error) {
-            const axiosError = error as AxiosError<{ message: string }>;
-            setOpen(true);
-            setStatus('error');
-            setMessage(axiosError.response?.data?.message || 'Their is Something wrong with Server.. Try Later')
+            return;
         }
-    }
+        
+        setLoading(true);
+        
+        // Use EmailJS to send the email
+        emailjs
+            .sendForm(
+                'service_nmpi3tp', 
+                'template_ita3xki', 
+                formRef.current, 
+                '_PaY40W8-ouYRmV8k'
+            )
+            .then(
+                (result) => {
+                    console.log('Email sent successfully:', result.text);
+                    setFormData({ name: "", email: "", message: "" });
+                    setStatus('success');
+                    setMessage("Your message has been sent successfully!");
+                    setOpen(true);
+                },
+                (error) => {
+                    console.error('Failed to send email:', error.text);
+                    setStatus('error');
+                    setMessage("Failed to send your message. Please try again later.");
+                    setOpen(true);
+                }
+            )
+            .finally(() => {
+                setLoading(false);
+            });
+    };
 
     const handleClose = (
         _event?: React.SyntheticEvent | Event,
@@ -247,7 +261,6 @@ const Contact = () => {
     }, []);
 
     return (
-
         <>
             <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
                 <Alert
@@ -263,7 +276,6 @@ const Contact = () => {
                 component={motion.section}
                 className="container mx-auto px-6 py-24 md:py-32 relative"
                 sx={{
-                    // background: "radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
                     padding: {
                         xs: "2rem 1rem",
                         sm: "3rem 2rem",
@@ -374,7 +386,6 @@ const Contact = () => {
                             fontWeight: 800,
                             letterSpacing: "0.3em",
                             color: COLORS.lightText,
-                            // textShadow: `0 0 20px ${COLORS.primary}`,
                             textShadow: "0 2px 4px rgba(0,0,0,0.3)",
                             position: "relative",
                             "&:after": {
@@ -401,6 +412,7 @@ const Contact = () => {
                         {/* Contact form */}
                         <Box
                             component={motion.form}
+                            ref={formRef}
                             onSubmit={handleSubmit}
                             initial="hidden"
                             whileInView="visible"
@@ -435,10 +447,10 @@ const Contact = () => {
                             }}
                         >
                             <StyledFormControl>
-                                <InputLabel htmlFor="name">Your Name</InputLabel>
+                                <InputLabel htmlFor="user_name">Your Name</InputLabel>
                                 <Input
-                                    id="name"
-                                    name="name"
+                                    id="user_name"
+                                    name="user_name"
                                     onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                                     value={formData.name}
                                     fullWidth
@@ -446,10 +458,10 @@ const Contact = () => {
                             </StyledFormControl>
 
                             <StyledFormControl>
-                                <InputLabel htmlFor="email">Your Email</InputLabel>
+                                <InputLabel htmlFor="user_email">Your Email</InputLabel>
                                 <Input
-                                    id="email"
-                                    name="email"
+                                    id="user_email"
+                                    name="user_email"
                                     type="email"
                                     onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                                     value={formData.email}
@@ -472,12 +484,14 @@ const Contact = () => {
 
                             <GlowButton
                                 type="submit"
+                                disabled={loading}
                                 sx={{
                                     alignSelf: "flex-start",
                                     marginTop: "1rem",
+                                    opacity: loading ? 0.7 : 1,
                                 }}
                             >
-                                Send Message
+                                {loading ? "Sending..." : "Send Message"}
                             </GlowButton>
                         </Box>
 
@@ -567,7 +581,7 @@ const Contact = () => {
                                     <ContactItem>
                                         <Box
                                             component={"a"}
-                                            href="tel:+916375519489"
+                                            href="tel:+918668267011"
                                             sx={{
                                                 borderRadius: "50%",
                                                 width: "45px",
@@ -588,7 +602,7 @@ const Contact = () => {
                                         </Box>
                                         <Typography
                                             component={"a"}
-                                            href="tel:+91 8668267011"
+                                            href="tel:+918668267011"
                                             sx={{
                                                 fontSize: "1.1rem",
                                                 fontWeight: 300,

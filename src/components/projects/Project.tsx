@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Project = () => {
     const [img1, setImg1] = useState(1);
-    const [, setImg2] = useState(1);
+    const [img2, setImg2] = useState(1);
 
     const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -168,7 +168,7 @@ const Project = () => {
                         </Box>
 
                         <Grid container columnSpacing={0.5} marginTop={3}>
-                            {[2, 3, 4, 5].map((num) => (
+                            {[1, 2, 3, 4].map((num) => (
                                 <Grid size={{ xs: 3 }} key={num}>
                                     <motion.img
                                         onMouseEnter={() => setImg1(num)}
@@ -194,7 +194,7 @@ const Project = () => {
 
                         <Box className="group relative p-2 md:p-4 border rounded-2xl bg-white/10 transition-all hover:shadow-lg">
                             <motion.img
-                                src={`/img/projects/tailortalk/${img1}.png`}
+                                src={`/img/projects/tailortalk/${img2}.png`}
                                 className="rounded-xl group-hover:blur-xs duration-500 h-[15rem] md:h-[18.4rem] w-full object-cover"
                                 alt="dev discuss"
                                 whileHover={{ scale: 1.02 }}

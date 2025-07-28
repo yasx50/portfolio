@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        successGreen: '#43F043',
+      },
       keyframes: {
         'bottom-to-top': {
           '0%': { transform: 'translateY(100%)', opacity: '0' },

@@ -4,7 +4,7 @@ import '../index.css'
 const Navbar = () => {
   return (
     <>
-      <div className='bg-black w-full h-16 flex items-center justify-between px-10 relative border- border-successGreen'>
+      <div className='bg-black w-full h-16 flex items-center justify-between px-10 relative border-b border-successGreen'>
 
         {/* Left: Green Box */}
         <div className="h-10 w-20 bg-successGreen"></div>

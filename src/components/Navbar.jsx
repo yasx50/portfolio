@@ -4,13 +4,13 @@ import '../index.css'
 const Navbar = () => {
   return (
     <>
-      <div className='bg-black w-full h-16 flex items-center justify-between px-10 relative border-b border-successGreen'>
+      <div className='bg-black w-full h-16 flex items-center justify-between px-10 relative  border-red-700 border-'>
 
         {/* Left: Green Box */}
-        <div className="h-10 w-20 bg-successGreen"></div>
+        <div className="h-10 w-20 bg-red-700"></div>
 
         {/* Center: Navigation */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 text-white text-2xl flex space-x-8 sarpanch-regular">
+        <div className="absolute left-1/2 transform -translate-x-1/2 text-zinc-500 text-2xl flex space-x-8 sarpanch-regular">
           <p>home</p>
           <p>projects</p>
           <p>contact</p>

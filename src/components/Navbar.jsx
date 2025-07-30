@@ -10,7 +10,7 @@ const Navbar = () => {
         
         {/* Left: Red Box (Toggle button on mobile) */}
         <div
-          className="h-10 w-20 bg-red-700 flex items-center justify-center cursor-pointer"
+          className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="text-white font-bold"></span>

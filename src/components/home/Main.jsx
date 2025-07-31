@@ -3,7 +3,7 @@ import React from 'react';
 const Details = () => {
   return (
     <>
-      <div className=" rounded bg-zinc-900 border-green-600 border-2 h-auto md:h-[50vh] w-[90%] md:w-2/3 m-4 flex flex-col justify-between relative mx-auto overflow-visible px-4 py-4 rounded-tr-lg rounded-br-lg">
+      <div className="  bg-zinc-900 border-green-600 border-2 h-auto md:h-[50vh] w-[90%] md:w-2/3 m-4 flex flex-col justify-between relative mx-auto overflow-hidde px-4 py-4 rounded-tr-lg rounded-br-lg">
         
         {/* ⬆️ Top Row: Combined Left + Right */}
         <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4">

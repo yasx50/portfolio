@@ -65,7 +65,7 @@ const Skills_Icon = () => {
         }
       `}</style>
       
-      <div className="relative my-10 border-red-700 border-2 h-auto md:h-20 w-[90%] md:w-2/3 flex items-center mx-auto overflow-hidden px-4 py-2 rounded-tr-lg rounded-br-lg bg-black">
+      <div className="relative my-10 border-red-700 border-2 h-auto md:h-20 w-[90%] md:w-2/3 flex items-center mx-auto overflow-hidden px-4 py-2 rounded bg-black">
         {/* Moving Icons Container */}
         <div className="flex animate-marquee space-x-10 text-3xl md:text-4xl">
           {/* First set of icons */}

@@ -16,6 +16,7 @@ export default {
         },
       },
       animation: {
+        'techmarquee': 'techmarquee 15s linear infinite',
         'spin-slow': 'spin 5s linear infinite',
         'bottom-to-top': 'bottom-to-top 1s ease-out forwards',
       },

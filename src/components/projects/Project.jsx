@@ -1,6 +1,9 @@
 import React from 'react'
 import ProjectCard from './Projects'
+import hospital from '../../assets/hospital.png';
 import msme from '../../assets/msme.png';
+import titanic from '../../assets/titanic.png';
+
 import {
   FaReact,
   FaNodeJs,
@@ -22,14 +25,26 @@ const Project = () => {
       image={msme}
       category="FinTech"
       techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
-      demoLink="https://hospital-food-management-system-1.onrender.com/"
-      githubLink="https://github.com/yasx50/hospital-food-management-system"
+      demoLink="https://ai-based-credit-scoring-agent-for-msmes-1.onrender.com/"
+      githubLink="https://github.com/yasx50/AI-based-Credit-Scoring-Agent-for-MSMEs"
     />
+
     <ProjectCard
-      title="Talk to Titanic"
-      description="Predicts MSME loan eligibility using Python, FastAPI, and ML frameworks."
-      image={msme}
-      category="FinTech"
+      title="Talk To Titanic"
+      description="A goal-driven AI agent for Titanic exploration."
+      image={titanic}
+      category="Agentic AI"
+      techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
+      demoLink="https://tailortalk.streamlit.app/"
+      githubLink="https://github.com/yasx50/tailortalk"
+    />
+
+
+    <ProjectCard
+      title="Hospital Management System	"
+      description="Our app is a hospital management system to handle patients, doctors, and billing."
+      image={hospital}
+      category="HealthTech"
       techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
       demoLink="https://hospital-food-management-system-1.onrender.com/"
       githubLink="https://github.com/yasx50/hospital-food-management-system"

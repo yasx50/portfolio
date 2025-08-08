@@ -11,7 +11,7 @@ const ProjectCard = ({
   githubLink,
 }) => {
   return (
-    <div className="relative bg-black border border-red-600 text-white my-10 h-auto md:h-40 w-[90%] md:w-2/3 flex items-center mx-auto overflow-hidden px-4 py-2 rounded-lg shadow-lg">
+    <div className="relative sarpanch-regular bg-black border border-red-600 text-white mt-10 h-auto md:h-40 w-[90%] md:w-2/3 flex items-center mx-auto overflow-hidden px-4 py-2 rounded-lg shadow-lg">
 
       {/* Left: Project Image (40%) */}
       <div className="w-[40%] h-full flex items-center justify-center">

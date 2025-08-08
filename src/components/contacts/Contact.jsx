@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, Github, Linkedin, MessageCircle, Instagram, Send, MapPin, Phone, Clock } from 'lucide-react';
 
 const Contact = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [notification, setNotification] = useState(""); // State for notification
+  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const form = useRef(); // Form reference for EmailJS
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -59,20 +64,42 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setNotification(""); // Clear previous notifications
+
+    // Validate form data
+    if (!formData.name || !formData.email || !formData.message) {
+      setNotification("Please fill in all required fields.");
+      setIsLoading(false);
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        'service_nmpi3tp', 
+        'template_ita3xki', 
+        form.current, 
+        '_PaY40W8-ouYRmV8k' // Your public key
+      )
+      .then(
+        () => {
+          setNotification("Your message has been sent successfully!"); // Success notification
+          setFormData({ name: '', email: '', message: '' }); // Reset form data
+          setIsLoading(false);
+        },
+        (error) => {
+          setNotification("Failed to send your message. Please try again."); // Error notification
+          console.log('FAILED...', error.text);
+          setIsLoading(false);
+        },
+      );
   };
 
   return (
-    <div className="min-h-screen bg-black py-16 px-4">
-        <div className="w-20 ml-10 h-10 bg-successGreen"></div>
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        
-
+    <div className="min-h-screen bg-black px-4 sarpanch-regular">
+      <div className="max-w-6xl mx-auto pt-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Side - Contact Info & Social Links */}
           <div className="space-y-8">
@@ -112,7 +139,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Response Time</p>
-                    <p className="text-white font-medium">Within 24 hours</p>
+                    <p className="text-white font-medium">Within 30 minutes</p>
                   </div>
                 </div>
               </div>
@@ -158,12 +185,10 @@ const Contact = () => {
               <MessageCircle className="w-6 h-6 text-red-400 mr-3" />
               Send a Message
             </h3>
-            
-            <div className="space-y-6">
+
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Your Name
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
                 <input
                   type="text"
                   name="name"
@@ -174,11 +199,9 @@ const Contact = () => {
                   required
                 />
               </div>
-              
+
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -189,48 +212,60 @@ const Contact = () => {
                   required
                 />
               </div>
-              
+
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Tell me about your project or just say hello..."
                   rows="6"
-                  className="w-full bg-black/50 border bborder-red-600 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full bg-black/50 border border-red-600 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none"
                   required
                 ></textarea>
               </div>
-              
+
               <button
-                onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-green-500 to-red-500 hover:from-green-600 hover:to-red-600 text-black font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-green-500/25"
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-green-500 to-red-500 hover:from-green-600 hover:to-red-600 disabled:from-gray-500 disabled:to-gray-600 text-black font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-green-500/25 disabled:cursor-not-allowed"
               >
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                <Send className={`w-5 h-5 ${isLoading ? 'animate-spin' : ''}`} />
+                <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
               </button>
-            </div>
-            
+            </form>
+
+            {/* Notification Display */}
+            {notification && (
+              <div className={`mt-4 p-4 rounded-xl border ${
+                notification.includes('successfully') 
+                  ? 'bg-green-500/10 border-green-500/30 text-green-400' 
+                  : notification.includes('Failed') || notification.includes('Please fill')
+                  ? 'bg-red-500/10 border-red-500/30 text-red-400'
+                  : 'bg-blue-500/10 border-blue-500/30 text-blue-400'
+              }`}>
+                <p className="text-sm text-center">{notification}</p>
+              </div>
+            )}
+
             <div className="mt-8 p-4 bg-green-500/10 border border-red-600 rounded-xl">
               <p className="text-green-400 text-sm text-center">
-                <strong>Quick Response:</strong> I typically respond within 24 hours. For urgent inquiries, reach out on Discord!
+                <strong>Quick Response:</strong> I typically respond within 30 minutes. For urgent inquiries, reach out on Discord!
               </p>
             </div>
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 pb-16">
           <div className="bg-black border border-red-600 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Something Great?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4 silkscreen-regular">Ready to Start Something Great?</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Whether it's a new project, collaboration, or just a friendly chat about tech, I'm always excited to connect with fellow developers and creators.
             </p>
             <a
-              href="mailto:yasxcode@gmail.com"
+              href="https://discord.com/users/yasx50"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-red-500 hover:from-green-600 hover:to-red-600 text-black font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-green-500/25"
             >
               <Mail className="w-5 h-5" />

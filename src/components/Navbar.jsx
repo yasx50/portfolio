@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import '../index.css';
 
 const Navbar = () => {
@@ -9,18 +11,18 @@ const Navbar = () => {
       <div className="bg-black w-full h-16 flex items-center justify-between px-6 md:px-10 relative border- border-red-700">
         
         {/* Left: Red Box (Toggle button on mobile) */}
-        <div
+        <Link to={'/'}><div
           className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="text-white font-bold"></span>
-        </div>
+        </div></Link>
 
         {/* Center: Navigation Links */}
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex text-zinc-500 text-lg md:text-2xl space-x-6 sarpanch-regular">
-          <p className="hover:text-red-700 cursor-pointer">home</p>
-          <p className="hover:text-red-700 cursor-pointer">projects</p>
-          <p className="hover:text-red-700 cursor-pointer">contact</p>
+          <Link to={'/'}><p className="hover:text-red-700 cursor-pointer">home</p></Link> 
+          <Link to={'/projects'}><p className="hover:text-red-700 cursor-pointer">projects</p></Link> 
+          <Link to={'/contact'}><p className="hover:text-red-700 cursor-pointer">contact</p></Link> 
         </div>
 
         {/* Right: YASH */}

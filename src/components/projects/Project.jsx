@@ -3,6 +3,7 @@ import ProjectCard from './Projects'
 import hospital from '../../assets/hospital.png';
 import msme from '../../assets/msme.png';
 import titanic from '../../assets/titanic.png';
+import { Link } from 'react-router-dom';
 
 import {
   FaReact,
@@ -17,14 +18,14 @@ const Project = () => {
   return (
    <><div className='bg-black '>
     
-   <div className="w-20 ml-10 h-10 bg-successGreen"></div>
+   <Link to={'/'}><div className="w-20 ml-10  flex h-10 bg-successGreen"></div></Link>
 
    <div className=''><ProjectCard
       title="ML Credit Scoring"
       description="Predicts MSME loan eligibility using Python, FastAPI, and ML frameworks."
       image={msme}
       category="FinTech"
-      techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
+      techIcons={[<FaReact />, <FaNodeJs />, <SiFastapi />, ]}
       demoLink="https://ai-based-credit-scoring-agent-for-msmes-1.onrender.com/"
       githubLink="https://github.com/yasx50/AI-based-Credit-Scoring-Agent-for-MSMEs"
     />

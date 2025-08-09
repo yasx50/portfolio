@@ -20,7 +20,7 @@ const Project = () => {
     
    <Link to={'/'}><div className="w-20 ml-10  flex h-10 bg-successGreen"></div></Link>
 
-   <div className=''><ProjectCard
+   <ProjectCard
       title="ML Credit Scoring"
       description="Predicts MSME loan eligibility using Python, FastAPI, and ML frameworks."
       image={msme}
@@ -52,7 +52,7 @@ const Project = () => {
     />
     
     </div>
-   </div>
+  
    </>
   )
 }

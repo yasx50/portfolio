@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter   } from "react-router-dom";
+import React, { useRef, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Home from './components/home/Home';
+import Project from './components/projects/Project';
+import Contact from './components/contacts/Contact';
+import Footer from './components/Footer';
 
-import Home from './components/Home'
-import About from './components/About'
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import AllProjects from './components/AllProjects';
-import MainPage from './components/MainPage';
+const ScrollToContact = ({ contactRef }) => {
+  const location = useLocation();
 
+  useEffect(() => {
+    if (location.pathname === '/contact' && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location, contactRef]);
 
-function App() {
-  
+  return null;
+};
+
+const MainLayout = () => {
+  const contactRef = useRef(null);
 
   return (
-  <>
- <BrowserRouter>
-      
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        
-        <Route path="/projects" element={<AllProjects />} />
-        
-      </Routes>
-    </BrowserRouter>
+    <>
+      <ScrollToContact contactRef={contactRef} />
+      <Home />
+      <Project />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
+      <Footer />
     </>
+  );
+};
 
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />} />
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/contact" element={<MainLayout />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
+};
 
-  )
-}
+// Separate full-page project route (can customize this component as needed)
+const ProjectPage = () => {
+  return (
+    <div className="min-h-screen bg-black text-white ">
+      <Project />
+    </div>
+  );
+};
 
-export default App
+export default App;

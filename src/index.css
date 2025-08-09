@@ -3,16 +3,51 @@
 @tailwind utilities;
 
 
-@font-face{
-  font-family:anzo;
-  src:url('./assets/file.woff2')
-}
-@font-face{
-  font-family:anzo2;
-  src:url('./assets/madefor-text.var.original.woff2')
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
-  
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+/* sarpnach font */
+
+.sarpanch-regular {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sarpanch-medium {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.sarpanch-semibold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sarpanch-bold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sarpanch-extrabold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sarpanch-black {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}

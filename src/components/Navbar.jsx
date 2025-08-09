@@ -1,32 +1,45 @@
-import { useState } from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaBars } from "react-icons/fa";
-import Logo from '../assets/coding-svgrepo-com.svg';
-import leetcode from '../assets/leetcode.png';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import '../index.css';
 
 const Navbar = () => {
- 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className=" top-0 font-[anzo2] left-0 w-full p-4 bg-black flex justify-between items-center z-50">
-      <div className="flex items-center space-x-4">
-        <h2 className="text-purple-300 h-[3rem]  text-3xl md:text-5xl">
-          Yash
-        </h2>
+    <>
+      <div className="bg-black w-full h-16 flex items-center justify-between px-6 md:px-10 relative border- border-red-700">
         
+        {/* Left: Red Box (Toggle button on mobile) */}
+        <Link to={'/'}><div
+          className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="text-white font-bold"></span>
+        </div></Link>
+
+        {/* Center: Navigation Links */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex text-zinc-500 text-lg md:text-2xl space-x-6 sarpanch-regular">
+          <Link to={'/'}><p className="hover:text-red-700 cursor-pointer">home</p></Link> 
+          <Link to={'/projects'}><p className="hover:text-red-700 cursor-pointer">projects</p></Link> 
+          <Link to={'/contact'}><p className="hover:text-red-700 cursor-pointer">contact</p></Link> 
+        </div>
+
+        {/* Right: YASH */}
+        <div className="text-white silkscreen-regular text-2xl md:text-3xl">
+          YASH
+        </div>
       </div>
-      <div className="flex md:space-x-3 gap-1 ml-[-100rem]">
-        <a href="https://github.com/yasx50" target="__blank" rel="noopener noreferrer">
-          <FaGithub className="text-purple-300  h-5 w-6 md:h-8 md:w-8" />
-        </a>
-        <a href="https://www.linkedin.com/in/yash-yadav-y05/" target="__blank" rel="noopener noreferrer">
-          <FaLinkedin className="text-purple-300  h-5 w-6 md:h-8 md:w-8" />
-        </a>
-        <a href="https://www.instagram.com/yash___yadu1c/" target="__blank" rel="noopener noreferrer">
-          <FaInstagram className="text-purple-300 h-5 w-6 md:h-8 md:w-8" />
-        </a>
-        
-      </div>
-    </nav>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-black border-b-2 border-red-700 text-zinc-500 text-lg space-y-3 p-4 sarpanch-regular">
+          <p className="hover:text-red-700 cursor-pointer">home</p>
+          <p className="hover:text-red-700 cursor-pointer">projects</p>
+          <p className="hover:text-red-700 cursor-pointer">contact</p>
+        </div>
+      )}
+    </>
   );
 };
 

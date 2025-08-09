@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react'
+import f from '../assets/footer.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-6 ">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-sm sm:text-lg italic">
-          "Code is the language of the future, and the future is now. Let's build it together."
-        </p>
-        <p className="text-xs mt-4">— Said by Yash Yadav</p>
-      </div>
-    </footer>
-  );
-};
+    <>
+    <div className='bg-black text-white sarpanch-regular flex justify-center items-center gap-2 '>
+        <img src={f} alt="" className='h-6 w-6 '/>
+        
+        designed by @yash yadav</div>
+    
+    </>
+  )
+}
 
-export default Footer;
+export default Footer

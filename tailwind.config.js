@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        successGreen: '#43F043',
+      },
       keyframes: {
         'bottom-to-top': {
           '0%': { transform: 'translateY(100%)', opacity: '0' },
@@ -13,6 +16,7 @@ export default {
         },
       },
       animation: {
+        'techmarquee': 'techmarquee 15s linear infinite',
         'spin-slow': 'spin 5s linear infinite',
         'bottom-to-top': 'bottom-to-top 1s ease-out forwards',
       },

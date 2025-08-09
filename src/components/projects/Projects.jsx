@@ -128,7 +128,6 @@ const ProjectCard = ({
           {techIcons.length > 0 && (
             <div className="w-[30%] relative bg-gray-900 rounded-lg p-2 border border-gray-700 group-hover:border-gray-600 transition-colors duration-300">
               <div className="flex space-x-2 justify-center">
-                {/* Display first 4 icons statically */}
                 {techIcons.slice(0, 4).map((IconComponent, idx) => (
                   <div 
                     key={idx} 
@@ -144,7 +143,6 @@ const ProjectCard = ({
                     {IconComponent}
                   </div>
                 ))}
-                {/* Show +N if more than 4 icons */}
                 {techIcons.length > 4 && (
                   <div className={`
                     text-xs text-gray-400 flex items-center

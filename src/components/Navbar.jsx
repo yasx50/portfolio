@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import '../index.css';
 
 const Navbar = () => {
@@ -8,21 +7,23 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black w-full h-16 flex items-center justify-between px-6 md:px-10 relative border- border-red-700">
+      <div className="bg-black w-full h-16 flex items-center justify-between px-6 md:px-10 relative  border-red-700">
         
         {/* Left: Red Box (Toggle button on mobile) */}
-        <Link to={'/'}><div
-          className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className="text-white font-bold"></span>
-        </div></Link>
+        <Link to="/">
+          <div
+            className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className="text-white font-bold"></span>
+          </div>
+        </Link>
 
         {/* Center: Navigation Links */}
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex text-zinc-500 text-lg md:text-2xl space-x-6 sarpanch-regular">
-          <Link to={'/'}><p className="hover:text-red-700 cursor-pointer">home</p></Link> 
-          <Link to={'/projects'}><p className="hover:text-red-700 cursor-pointer">projects</p></Link> 
-          <Link to={'/contact'}><p className="hover:text-red-700 cursor-pointer">contact</p></Link> 
+          <Link to="/"><p className="hover:text-red-700 cursor-pointer">home</p></Link>
+          <Link to="/projects"><p className="hover:text-red-700 cursor-pointer">projects</p></Link>
+          <Link to="/contact"><p className="hover:text-red-700 cursor-pointer">contact</p></Link>
         </div>
 
         {/* Right: YASH */}
@@ -31,12 +32,18 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* ✅ Mobile Dropdown Menu with Working Links */}
       {menuOpen && (
         <div className="md:hidden bg-black border-b-2 border-red-700 text-zinc-500 text-lg space-y-3 p-4 sarpanch-regular">
-          <p className="hover:text-red-700 cursor-pointer">home</p>
-          <p className="hover:text-red-700 cursor-pointer">projects</p>
-          <p className="hover:text-red-700 cursor-pointer">contact</p>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <p className="hover:text-red-700 cursor-pointer">home</p>
+          </Link>
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>
+            <p className="hover:text-red-700 cursor-pointer">projects</p>
+          </Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>
+            <p className="hover:text-red-700 cursor-pointer">contact</p>
+          </Link>
         </div>
       )}
     </>

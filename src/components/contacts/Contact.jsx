@@ -99,8 +99,8 @@ const Contact = () => {
   };
 
   return (
-    <div className=" bg-black  sarpanch-regular ">
-      <Link to={'/'}><div className="w-20 ml-10 h-10 bg-successGreen "></div></Link>
+    <div className=" bg-black  sarpanch-regular  ">
+      <Link to={'/'}><div className="w-20 ml-10 h-10  bg-successGreen "></div></Link>
       <div className="max-w-6xl mx-auto pt-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Side - Contact Info & Social Links */}

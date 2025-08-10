@@ -16,7 +16,7 @@ import {
 } from 'react-icons/si';
 const Project = () => {
   return (
-   <><div className='bg-black '>
+   <><div className='bg-black  '>
     
    <Link to={'/'}><div className="w-20 ml-10  flex h-10 bg-successGreen"></div></Link>
 

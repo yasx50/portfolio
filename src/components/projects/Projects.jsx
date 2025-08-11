@@ -42,7 +42,7 @@ const ProjectCard = ({
       className={`
         relative sarpanch-regular bg-black border border-red-600 text-white
         w-[95%] md:w-2/3 flex items-center mx-auto overflow-hidden
-        rounded-lg shadow-lg mb-6 last:mb-0
+        rounded-lg shadow-lg mb-6 last:mb-0 h-36 md:h-44
         transform transition-all duration-700 ease-out
         ${isVisible 
           ? 'translate-y-0 opacity-100 scale-100' 
@@ -54,7 +54,7 @@ const ProjectCard = ({
       style={{ transitionDelay: isVisible ? '0ms' : `${delay}ms` }}
     >
       {/* Project Image */}
-      <div className="w-[35%] md:w-[40%] h-36 md:h-full flex items-center justify-center overflow-hidden md:rounded-l-lg">
+      <div className="w-[35%] md:w-[40%] h-full flex items-center justify-center overflow-hidden md:rounded-l-lg">
         <img
           src={image || "https://via.placeholder.com/400x200?text=Project+Image"}
           alt={title}
@@ -68,7 +68,7 @@ const ProjectCard = ({
       </div>
 
       {/* Details */}
-      <div className="w-[65%] md:w-[60%] p-3 md:p-4 flex flex-col justify-center relative">
+      <div className="w-[65%] md:w-[60%] p-3 md:p-4 flex flex-col justify-center relative h-full">
         {/* Top Section */}
         <div
           className={`
@@ -78,14 +78,14 @@ const ProjectCard = ({
           `}
           style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}
         >
-          <h2 className="text-base md:text-xl font-bold leading-tight break-words flex-1 mr-3 group-hover:text-green-400 transition-colors duration-300">
+          <h2 className="text-base md:text-xl font-bold leading-tight break-words flex-1 mr-3 group-hover:text-green-400 transition-colors duration-300 line-clamp-2">
             {title}
           </h2>
           <div
             className={`
               px-2 py-1 bg-gradient-to-r from-green-400 to-red-500 rounded-full 
               text-[10px] md:text-xs font-semibold shadow-lg shadow-green-500/50 whitespace-nowrap text-black
-              transform transition-all duration-300
+              transform transition-all duration-300 flex-shrink-0
               ${isVisible ? 'animate-pulse' : ''}
               group-hover:shadow-green-500/70 group-hover:scale-105
             `}
@@ -97,7 +97,7 @@ const ProjectCard = ({
         {/* Description */}
         <p
           className={`
-            text-xs md:text-sm text-gray-300 mb-2 leading-snug break-words
+            text-xs md:text-sm text-gray-300 mb-2 leading-snug break-words line-clamp-2
             transform transition-all duration-500 ease-out
             ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}
             group-hover:text-white
@@ -110,7 +110,7 @@ const ProjectCard = ({
         {/* Bottom Section */}
         <div
           className={`
-            flex items-center justify-between flex-wrap gap-y-2
+            flex items-center justify-between flex-wrap gap-y-2 mt-auto
             transform transition-all duration-500 ease-out
             ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
           `}

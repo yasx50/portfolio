@@ -9,7 +9,7 @@ const Details = () => {
         <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4">
           {/* Left (Image) */}
           <div className="border-red-700 border-2 rounded w-full md:w-[35vh] h-[30vh]">
-            <img src="/pfp.jpg" alt="ML Visual" className="w-full h-full object-fill rounded" />
+            <img src="/image.png" alt="ML Visual" className="w-full h-full object-fill rounded" />
           </div>
 
           {/* Right (Text) */}

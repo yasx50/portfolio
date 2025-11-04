@@ -21,7 +21,7 @@ export default {
         'bottom-to-top': 'bottom-to-top 1s ease-out forwards',
       },
       fontFamily: {
-        dela: ['"Dela Gothic One"', 'sans-serif'],
+        dela: ['"Luckiest Guy"', 'sans-serif'],
       },
     },
   },

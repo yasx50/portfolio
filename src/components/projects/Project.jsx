@@ -1,60 +1,53 @@
-import React from 'react'
-import ProjectCard from './Projects'
-import hospital from '../../assets/hospital.png';
-import msme from '../../assets/msme.png';
-import titanic from '../../assets/titanic.png';
-import { Link } from 'react-router-dom';
+export const ProjectsScreen = () => {
+  const projects = [
+    {
+      title: 'ML SIMPLIFIED',
+      description: 'Educational platform making machine learning accessible to everyone',
+      tags: ['ML', 'Education', 'Content'],
+      color: 'bg-orange-500'
+    },
+    {
+      title: 'AI TOOLKIT',
+      description: 'Collection of AI tools and utilities for developers',
+      tags: ['Python', 'AI', 'Tools'],
+      color: 'bg-black'
+    },
+    {
+      title: 'DATA VISUALIZER',
+      description: 'Interactive data visualization dashboard',
+      tags: ['React', 'D3.js', 'Analytics'],
+      color: 'bg-orange-500'
+    }
+  ];
 
-import {
-  FaReact,
-  FaNodeJs,
-} from 'react-icons/fa';
-import {
-  SiMongodb,
-  SiFastapi,
-  SiPytorch,
-} from 'react-icons/si';
-const Project = () => {
   return (
-   <><div className='bg-black  '>
-    
-   <Link to={'/'}><div className="w-20 ml-10  flex h-10 bg-successGreen"></div></Link>
-
-   <ProjectCard
-      title="ML Credit Scoring"
-      description="Predicts MSME loan eligibility using Python, FastAPI, and ML frameworks."
-      image={msme}
-      category="FinTech"
-      techIcons={[<FaReact />, <FaNodeJs />, <SiFastapi />, ]}
-      demoLink="https://ai-based-credit-scoring-agent-for-msmes-1.onrender.com/"
-      githubLink="https://github.com/yasx50/AI-based-Credit-Scoring-Agent-for-MSMEs"
-    />
-
-    <ProjectCard
-      title="Talk To Titanic"
-      description="A goal-driven AI agent for Titanic exploration."
-      image={titanic}
-      category="Agentic AI"
-      techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
-      demoLink="https://tailortalk.streamlit.app/"
-      githubLink="https://github.com/yasx50/tailortalk"
-    />
-
-
-    <ProjectCard
-      title="Hospital Management System	"
-      description="Our app is a hospital management system to handle patients, doctors, and billing."
-      image={hospital}
-      category="HealthTech"
-      techIcons={[<FaReact />, <FaNodeJs />, <SiMongodb />, ]}
-      demoLink="https://hospital-food-management-system-1.onrender.com/"
-      githubLink="https://github.com/yasx50/hospital-food-management-system"
-    />
-    
+    <div className="min-h-screen bg-gradient-to-br from-orange-400 to-orange-500 pt-20 md:pt-24 p-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-black text-black mb-8 text-center">MY PROJECTS</h1>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition-transform cursor-pointer"
+            >
+              <div className={`${project.color} h-32 rounded-2xl mb-4 flex items-center justify-center text-white text-4xl font-black`}>
+                {index + 1}
+              </div>
+              <h3 className="text-2xl font-black text-black mb-2">{project.title}</h3>
+              <p className="text-gray-700 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  
-   </>
-  )
-}
+  );
+};
 
-export default Project

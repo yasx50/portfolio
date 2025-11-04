@@ -1,53 +1,96 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../index.css';
+import React, { useState } from "react";
+import {
+  AiFillHome,
+} from "react-icons/ai";
+import {
+  BsFillPersonFill,
+  BsFillBriefcaseFill,
+  BsFillEnvelopeFill,
+} from "react-icons/bs";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Navigation = ({ activeScreen, setActiveScreen }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <div className="bg-black w-full h-16 flex items-center justify-between px-6 md:px-10 relative  border-red-700">
-        
-        {/* Left: Red Box (Toggle button on mobile) */}
-        <Link to="/">
-          <div
-            className="h-10 w-20 bg-successGreen flex items-center justify-center cursor-pointer"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span className="text-white font-bold"></span>
-          </div>
-        </Link>
-
-        {/* Center: Navigation Links */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex text-zinc-500 text-lg md:text-2xl space-x-6 sarpanch-regular">
-          <Link to="/"><p className="hover:text-red-700 cursor-pointer">home</p></Link>
-          <Link to="/projects"><p className="hover:text-red-700 cursor-pointer">projects</p></Link>
-          <Link to="/contact"><p className="hover:text-red-700 cursor-pointer">contact</p></Link>
-        </div>
-
-        {/* Right: YASH */}
-        <div className="text-white silkscreen-regular text-2xl md:text-3xl">
-          YASH
-        </div>
+      {/* Circle Button */}
+      <div
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="fixed top-5 right-5 z-50 w-10 h-10 bg-orange-500 rounded-full cursor-pointer flex items-center justify-center transition-all duration-700 hover:bg-orange-600"
+      >
+        {!isMenuOpen ? (
+          <span className="text-white text-xl">☰</span>
+        ) : (
+          <span className="text-white text-xl">✕</span>
+        )}
       </div>
 
-      {/* ✅ Mobile Dropdown Menu with Working Links */}
-      {menuOpen && (
-        <div className="md:hidden bg-black border-b-2 border-red-700 text-zinc-500 text-lg space-y-3 p-4 sarpanch-regular">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            <p className="hover:text-red-700 cursor-pointer">home</p>
-          </Link>
-          <Link to="/projects" onClick={() => setMenuOpen(false)}>
-            <p className="hover:text-red-700 cursor-pointer">projects</p>
-          </Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <p className="hover:text-red-700 cursor-pointer">contact</p>
-          </Link>
+      {/* Expanding Circle Background */}
+      <div
+        className={`fixed top-5 right-5 bg-orange-500 rounded-full z-40 transition-all duration-700 ease-in-out ${
+          isMenuOpen ? "w-[3000px] h-[3000px]" : "w-10 h-10"
+        }`}
+        style={{ transform: "translate(50%, -50%)" }}
+      ></div>
+
+      {/* Fullscreen Menu Content */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-10 text-white text-3xl font-bold transition-opacity duration-700">
+          <button
+            onClick={() => {
+              setActiveScreen("home");
+              setIsMenuOpen(false);
+            }}
+            className={`flex items-center space-x-3 hover:text-black ${
+              activeScreen === "home" ? "text-black" : ""
+            }`}
+          >
+            <AiFillHome size={30} />
+            <span>Home</span>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveScreen("about");
+              setIsMenuOpen(false);
+            }}
+            className={`flex items-center space-x-3 hover:text-black ${
+              activeScreen === "about" ? "text-black" : ""
+            }`}
+          >
+            <BsFillPersonFill size={30} />
+            <span>About</span>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveScreen("projects");
+              setIsMenuOpen(false);
+            }}
+            className={`flex items-center space-x-3 hover:text-black ${
+              activeScreen === "projects" ? "text-black" : ""
+            }`}
+          >
+            <BsFillBriefcaseFill size={30} />
+            <span>Projects</span>
+          </button>
+
+          <button
+            onClick={() => {
+              setActiveScreen("contact");
+              setIsMenuOpen(false);
+            }}
+            className={`flex items-center space-x-3 hover:text-black ${
+              activeScreen === "contact" ? "text-black" : ""
+            }`}
+          >
+            <BsFillEnvelopeFill size={30} />
+            <span>Contact</span>
+          </button>
         </div>
       )}
     </>
   );
 };
 
-export default Navbar;
+export default Navigation;

@@ -3,12 +3,12 @@ import SocialLinks from "../SocialLinks.jsx";
 
 const ContactScreen = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: ""
   });
 
-  const [status, setStatus] = useState(""); // "", sending, success, error
+  const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
 
   const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -20,16 +20,16 @@ const ContactScreen = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    if (!formData.user_name.trim()) {
+      newErrors.user_name = "Name is required";
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+    if (!formData.user_email.trim()) {
+      newErrors.user_email = "Email is required";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.user_email)
     ) {
-      newErrors.email = "Invalid email format";
+      newErrors.user_email = "Invalid email format";
     }
 
     if (!formData.message.trim()) {
@@ -46,7 +46,6 @@ const ContactScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
 
     setStatus("sending");
@@ -63,8 +62,8 @@ const ContactScreen = () => {
             user_id: EMAILJS_PUBLIC_KEY,
             template_params: {
               to_name: "Yash",
-              from_name: formData.user_name,
-              from_email: formData.user_email,
+              user_name: formData.user_name,
+              user_email: formData.user_email,
               message: formData.message
             }
           })
@@ -76,21 +75,18 @@ const ContactScreen = () => {
       }
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        user_name: "",
+        user_email: "",
+        message: ""
+      });
       setErrors({});
 
-      // auto-clear success after 4 seconds
-      setTimeout(() => {
-        setStatus("");
-      }, 4000);
-
+      setTimeout(() => setStatus(""), 4000);
     } catch (error) {
       console.error("Email Error:", error);
       setStatus("error");
-
-      setTimeout(() => {
-        setStatus("");
-      }, 4000);
+      setTimeout(() => setStatus(""), 4000);
     }
   };
 
@@ -104,7 +100,6 @@ const ContactScreen = () => {
       [name]: value
     }));
 
-    // Remove error dynamically while typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -115,50 +110,6 @@ const ContactScreen = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-400 to-orange-500 pt-20 md:pt-24 p-6 relative overflow-hidden">
-      {/* Background Sticky Notes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Sticky Note 1 - Top Left */}
-        <div className="absolute top-32 left-10 transform -rotate-6 bg-yellow-300 p-6 rounded-lg shadow-xl max-w-xs">
-          <p className="text-black font-bold text-lg italic">
-            "Code is like humor. When you have to explain it, it's bad."
-          </p>
-          <div className="mt-2 text-sm text-gray-700">— Cory House</div>
-        </div>
-
-        {/* Sticky Note 2 - Top Right */}
-        <div className="absolute top-40 right-10 transform rotate-3 bg-pink-300 p-6 rounded-lg shadow-xl max-w-xs">
-          <p className="text-black font-bold text-lg italic">
-            "First, solve the problem. Then, write the code."
-          </p>
-          <div className="mt-2 text-sm text-gray-700">— John Johnson</div>
-        </div>
-
-        {/* Sticky Note 3 - Bottom Left */}
-        <div className="absolute bottom-32 left-20 transform rotate-2 bg-blue-300 p-6 rounded-lg shadow-xl max-w-xs">
-          <p className="text-black font-bold text-lg italic">
-            "Make it work, make it right, make it fast."
-          </p>
-          <div className="mt-2 text-sm text-gray-700">— Kent Beck</div>
-        </div>
-
-        {/* Sticky Note 4 - Middle Right (Mobile Hidden) */}
-        <div className="hidden md:block absolute top-1/2 right-5 transform -rotate-3 bg-green-300 p-6 rounded-lg shadow-xl max-w-xs">
-          <p className="text-black font-bold text-lg italic">
-            "Talk is cheap. Show me the code."
-          </p>
-          <div className="mt-2 text-sm text-gray-700">— Linus Torvalds</div>
-        </div>
-
-        {/* Sticky Note 5 - Bottom Right (Mobile Hidden) */}
-        <div className="hidden lg:block absolute bottom-40 right-32 transform rotate-6 bg-purple-300 p-6 rounded-lg shadow-xl max-w-xs">
-          <p className="text-black font-bold text-lg italic">
-            "The best way to predict the future is to invent it."
-          </p>
-          <div className="mt-2 text-sm text-gray-700">— Alan Kay</div>
-        </div>
-      </div>
-
-      {/* Main Content */}
       <div className="max-w-2xl mx-auto relative z-10">
         <h1 className="text-5xl md:text-6xl font-black text-black mb-8 text-center">
           CONTACT ME
@@ -166,68 +117,79 @@ const ContactScreen = () => {
 
         <div className="bg-white rounded-3xl p-8 shadow-2xl">
           <form className="space-y-6" onSubmit={handleSubmit}>
+
+            {/* NAME */}
             <div>
-              <label className="block text-black font-black mb-2">NAME</label>
+              <label className="block font-black mb-2">NAME</label>
               <input
                 type="text"
-                name="name"
-                value={formData.name}
+                name="user_name"
+                value={formData.user_name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black"
                 placeholder="Your name"
               />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              {errors.user_name && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.user_name}
+                </p>
               )}
             </div>
 
+            {/* EMAIL */}
             <div>
-              <label className="block text-black font-black mb-2">EMAIL</label>
+              <label className="block font-black mb-2">EMAIL</label>
               <input
                 type="email"
-                name="email"
-                value={formData.email}
+                name="user_email"
+                value={formData.user_email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black"
                 placeholder="your.email@example.com"
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              {errors.user_email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.user_email}
+                </p>
               )}
             </div>
 
+            {/* MESSAGE */}
             <div>
-              <label className="block text-black font-black mb-2">MESSAGE</label>
+              <label className="block font-black mb-2">MESSAGE</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-xl border-2 border-orange-500 focus:outline-none focus:border-black resize-none"
                 placeholder="Your message..."
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message}
+                </p>
               )}
             </div>
 
+            {/* BUTTON */}
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-black text-orange-400 py-4 rounded-xl font-black text-xl hover:bg-gray-800 transition-colors disabled:opacity-50"
+              className="w-full bg-black text-orange-400 py-4 rounded-xl font-black text-xl hover:bg-gray-800 disabled:opacity-50"
             >
               {status === "sending" ? "SENDING..." : "SEND MESSAGE"}
             </button>
 
             {status === "success" && (
               <div className="bg-green-100 text-green-800 p-4 rounded-xl text-center font-bold">
-                Message sent successfully! ✓
+                Message sent successfully ✓
               </div>
             )}
 
             {status === "error" && (
               <div className="bg-red-100 text-red-800 p-4 rounded-xl text-center font-bold">
-                Failed to send message. Please try again.
+                Failed to send message.
               </div>
             )}
           </form>

@@ -87,17 +87,17 @@ const AboutScreen = () => {
           className="grid md:grid-cols-3 gap-6"
         >
           <img
-            src="/images/photo1.jpg"
+            src="/assets/photo1.jpg"
             alt="Yash working"
             className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
           />
           <img
-            src="/images/photo2.jpg"
+            src="/assets/photo2.jpg"
             alt="Yash coding"
             className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
           />
           <img
-            src="/images/photo3.jpg"
+            src="/assets/advanced.jpg"
             alt="Yash presentation"
             className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
           />

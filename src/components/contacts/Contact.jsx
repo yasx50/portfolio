@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+
+/* ─── Initialize EmailJS ─── */
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 /* ─── Floating background cards data ─── */
 const floatingMessages = [
@@ -134,13 +138,22 @@ const ContactScreen = () => {
     if (!validateForm()) return;
     setStatus("sending");
     try {
-      // Replace with real EmailJS call
-      await new Promise((r) => setTimeout(r, 1500));
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_name: "Yash",
+          user_name: formData.user_name,
+          user_email: formData.user_email,
+          message: formData.message,
+        }
+      );
       setStatus("success");
       setFormData({ user_name: "", user_email: "", message: "" });
       setErrors({});
       setTimeout(() => setStatus(""), 4000);
-    } catch {
+    } catch (error) {
+      console.error("EmailJS error:", error);
       setStatus("error");
       setTimeout(() => setStatus(""), 4000);
     }

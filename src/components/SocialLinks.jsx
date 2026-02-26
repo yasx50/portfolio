@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Instagram, Github, Linkedin, MessageCircle,YoutubeIcon } from 'lucide-react';
 
 const SocialLinks = () => {
   const socialLinks = [
@@ -26,6 +26,12 @@ const SocialLinks = () => {
       color: 'hover:bg-indigo-500',
       label: 'Discord',
       link: 'https://discord.com/users/yasx50',
+    },
+    {
+      icon: YoutubeIcon,
+      color: 'hover:bg-red-600',
+      label: 'YouTube',
+      link: 'https://www.youtube.com/@MLSimplified-u2y',
     },
   ];
 

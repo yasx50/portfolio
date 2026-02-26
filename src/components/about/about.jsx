@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import gym from "../../assets/gg.jpeg";
+import content from "../../assets/cc.jpg";
+import coder from "../../assets/pp.jpeg";
+
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -86,21 +91,62 @@ const AboutScreen = () => {
           variants={fadeUp}
           className="grid md:grid-cols-3 gap-6"
         >
-          <img
-            src="/assets/photo1.jpg"
-            alt="Yash working"
-            className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
-          />
-          <img
-            src="/assets/photo2.jpg"
-            alt="Yash coding"
-            className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
-          />
-          <img
-            src="/assets/advanced.jpg"
-            alt="Yash presentation"
-            className="rounded-3xl shadow-2xl object-cover h-80 w-full hover:scale-105 transition-transform"
-          />
+          {/* Gym Image */}
+          <div className="relative group overflow-hidden rounded-3xl shadow-2xl h-80 cursor-pointer">
+            <img
+              src={gym}
+              alt="Gym"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-500 ease-out flex items-center justify-center">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-white text-3xl md:text-4xl font-black text-center px-4"
+              >
+                GYM
+              </motion.p>
+            </div>
+          </div>
+
+          {/* Content Creation Image */}
+          <div className="relative group overflow-hidden rounded-3xl shadow-2xl h-80 cursor-pointer">
+            <img
+              src={content}
+              alt="Content Creation"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-500 ease-out flex items-center justify-center">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-white text-2xl md:text-3xl font-black text-center px-4"
+              >
+                CONTENT CREATION
+              </motion.p>
+            </div>
+          </div>
+
+          {/* Software Developer Image */}
+          <div className="relative group overflow-hidden rounded-3xl shadow-2xl h-80 cursor-pointer">
+            <img
+              src={coder}
+              alt="Software Developer"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-500 ease-out flex items-center justify-center">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-white text-2xl md:text-3xl font-black text-center px-4"
+              >
+                SOFTWARE DEVELOPER
+              </motion.p>
+            </div>
+          </div>
         </motion.div>
 
       </div>

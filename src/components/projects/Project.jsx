@@ -32,7 +32,7 @@ const ProjectsScreen = () => {
       description:
         "Users input two individuals' data and AI generates structured debate from both perspectives using advanced reasoning agents.",
       tech: ["React", "Node.js", "LLM", "Prompt Engineering"],
-      link: null,
+      link: "https://ai-war.onrender.com/",
       glow: "multi"
     }
   ];
